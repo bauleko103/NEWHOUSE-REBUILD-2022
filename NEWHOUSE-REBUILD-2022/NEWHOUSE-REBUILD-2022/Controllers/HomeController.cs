@@ -13,6 +13,36 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
             return View();
         }
 
+        public ActionResult Slider()
+        {
+            return View();
+        }
+
+        public ActionResult DuAn()
+        {
+            return View();
+        }
+
+        public ActionResult TinTuc()
+        {
+            return View();
+        }
+
+        public ActionResult KienTrucSu()
+        {
+            return View();
+        }
+
+        public ActionResult DoiTac()
+        {
+            return View();
+        }
+
+        public ActionResult LienHe()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
