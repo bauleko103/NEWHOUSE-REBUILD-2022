@@ -1,0 +1,135 @@
+﻿@model NEWHOUSE_REBUILD_2022.Models.Slide
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+
+
+
+ 
+
+<div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+        <!-- Topbar -->
+        <!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid p-md-4">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">THÊM SLIDE</h1>
+            </div>
+
+            <div class="row">
+                @using (Html.BeginForm("Create", "AdminSlides", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    @Html.ValidationSummary(true)
+
+                    <div class="col-xl-12 col-md-12 mb-12">
+                        <div class="card  shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-12 p-4">
+
+
+                                        <style>
+                                            .HinhAnhDuAn {
+                                                height: 10vh;
+                                                width: auto;
+                                            }
+
+                                            .HinhAnhFeature {
+                                                height: 20vh;
+                                                width: auto;
+                                            }
+                                        </style>
+
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Số thự tự
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+
+                                            @Html.EditorFor(model => model.SoThuTu, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.SoThuTu, "", new { @class = "text-danger" })
+                                        </div>
+                                        <Br />
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Tựa đề
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            @Html.EditorFor(model => model.TuaDe, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.TuaDe, "", new { @class = "text-danger" })
+                                        </div>
+                                        <Br />
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Tựa đề phụ
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            @Html.EditorFor(model => model.TuaDePhu, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.TuaDePhu, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <br />
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Hình ảnh slide (bắt buộc thêm hình ảnh dưới 1mb)
+                                        </div>
+                                        <div class="HinhAnhFeature">
+
+                                            <input type="file" id="uploadhinh" name="uploadhinh" accept="image/*" />
+
+                                        </div>
+
+                                        <div class="col mr-12 p-4" style="display:flex; justify-content: flex-end;">
+                                            <button type="submit" class="btn button-crud" value="Save">
+                                                Lưu
+                                            </button>
+                                            <a class="btn btn-back" href="@Url.Action("Index")">
+                                                Trở về
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <!-- Tổng dự án Card Example -->
+
+
+
+                    </div>
+
+
+                }
+                </div>
+                <!-- /.container-fluid -->
+
+        </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+          
+            <!-- End of Footer -->
+
+    </div>
+
+</div>
+ 
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
