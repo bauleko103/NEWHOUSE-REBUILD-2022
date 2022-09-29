@@ -18,10 +18,16 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // GET: AdminSlides
         public ActionResult Index()
         {
-          
+            
             if (Session["UserID"] != null)
             {
+                var orderByDescendingResult = from s in db.Slides //Sorts the studentList collection in descending order
+                                              orderby s.ID descending
+                                              select s;
+                var tk= db.Slides.OrderByDescending(sl => sl.ID).ToList();
+                ViewBag.LonToiBe = orderByDescendingResult;
                 return View(db.Slides.ToList());
+              
             }
             else
             {
@@ -71,7 +77,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
             }
             return RedirectToAction("Index","AdminSlides");
         }
-         
+        
         // GET: AdminSlides/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -87,13 +93,15 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
             return View(slide);
         }
 
-        // POST: AdminSlides/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+       /* public int SlideSize = 0;*/
+
         [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit( Slide slide, HttpPostedFileBase uploadhinh )
         {
+            /*var data = (from s in db.Slides select s.ID);
+            int totalPage = data.Count();*/
+            SlideSize = totalPage;
             Slide unv = db.Slides.FirstOrDefault(x => x.ID == slide.ID);
             unv.TuaDe = slide.TuaDe;
             unv.TuaDePhu = slide.TuaDePhu;
