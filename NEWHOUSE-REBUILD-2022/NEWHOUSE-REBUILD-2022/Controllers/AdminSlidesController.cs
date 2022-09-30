@@ -21,12 +21,8 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
             
             if (Session["UserID"] != null)
             {
-                var orderByDescendingResult = from s in db.Slides //Sorts the studentList collection in descending order
-                                              orderby s.ID descending
-                                              select s;
-                var tk= db.Slides.OrderByDescending(sl => sl.ID).ToList();
-                ViewBag.LonToiBe = orderByDescendingResult;
-                return View(db.Slides.ToList());
+                
+                return View(db.Slides.OrderByDescending(b => b.ID).ToList());
               
             }
             else
@@ -101,7 +97,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         {
             /*var data = (from s in db.Slides select s.ID);
             int totalPage = data.Count();*/
-            SlideSize = totalPage;
+           
             Slide unv = db.Slides.FirstOrDefault(x => x.ID == slide.ID);
             unv.TuaDe = slide.TuaDe;
             unv.TuaDePhu = slide.TuaDePhu;

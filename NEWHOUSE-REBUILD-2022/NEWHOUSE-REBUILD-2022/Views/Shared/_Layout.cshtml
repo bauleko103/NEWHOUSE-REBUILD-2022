@@ -83,22 +83,71 @@
                     <li>
                         <a href="#portfolio" data-scroll="true">Liên Hệ</a>
                     </li>
-                    <li>
-                        <a href="#contact" data-scroll="true">EN|VN</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
     </header>
     @RenderBody()
-
+    <!-- Footer-->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-wrap">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="copy-text">
+                            <p><i class="icon-heart red mr-15"></i>© 2022 Newhouse Solution.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#">Trang Chủ</a>
+                            </li>
+                            <li>
+                                <a href="#">Sản Phẩm</a>
+                            </li>
+                            <li>
+                                <a href="#">Dự Án</a>
+                            </li>
+                            <li>
+                                <a href="#">Kiến Trúc Sư & Đối Tác</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer-social">
+                            <ul>
+                                <li>
+                                    <a target="_blank" href="#"><i class="ti-facebook"></i></a>
+                                </li>
+                                 
+                                <li>
+                                    <a target="_blank" href="#"><i class="ti-linkedin"></i></a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="#"><i class="ti-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="#"><i class="ti-pinterest"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of row-->
+            </div>
+        </div>
+        <!-- end of container-->
+    </footer>
+    <!-- end of footer-->
     <script type="text/javascript" src="~/Content/js/jquery.js"></script>
     <script type="text/javascript" src="~/Content/js/bundle.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script type="text/javascript" src="~/Content/js/main.js"></script>
 
     @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)*@
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
 </body>
 </html>

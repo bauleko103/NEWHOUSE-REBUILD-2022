@@ -17,5 +17,6 @@ namespace NEWHOUSE_REBUILD_2022.Models
         public int ID { get; set; }
         public string TaiKhoan { get; set; }
         public string MatKhau { get; set; }
+        public string LoginErrorMessage { get; set; }
     }
 }

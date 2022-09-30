@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminGiaiPhapsController.cs" />
     <Compile Include="Controllers\AdminSlidesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3226,10 +3227,14 @@
     <Content Include="Views\AdminSlides\Delete.cshtml" />
     <Content Include="Views\AdminSlides\Edit.cshtml" />
     <Content Include="Views\AdminSlides\Index.cshtml" />
+    <Content Include="Views\AdminGiaiPhaps\Create.cshtml" />
+    <Content Include="Views\AdminGiaiPhaps\Delete.cshtml" />
+    <Content Include="Views\AdminGiaiPhaps\Edit.cshtml" />
+    <Content Include="Views\AdminGiaiPhaps\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\img\" />
+    <Folder Include="Content\img\giaiphap\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

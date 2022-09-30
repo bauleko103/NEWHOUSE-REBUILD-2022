@@ -12,6 +12,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TaiKhoan" Type="nvarchar" MaxLength="100" />
           <Property Name="MatKhau" Type="nvarchar" MaxLength="100" />
+          <Property Name="LoginErrorMessage" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="CongNghe">
           <Key>
@@ -224,6 +225,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TaiKhoan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MatKhau" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LoginErrorMessage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CongNghe">
           <Key>
@@ -438,6 +440,7 @@
           <EntitySetMapping Name="ADMINs">
             <EntityTypeMapping TypeName="NEWHOUSE2022Model.ADMIN">
               <MappingFragment StoreEntitySet="ADMIN">
+                <ScalarProperty Name="LoginErrorMessage" ColumnName="LoginErrorMessage" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
                 <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
