@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminCongNghesController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminGiaiPhapsController.cs" />
     <Compile Include="Controllers\AdminSlidesController.cs" />
@@ -3231,6 +3232,11 @@
     <Content Include="Views\AdminGiaiPhaps\Delete.cshtml" />
     <Content Include="Views\AdminGiaiPhaps\Edit.cshtml" />
     <Content Include="Views\AdminGiaiPhaps\Index.cshtml" />
+    <Content Include="Views\AdminCongNghes\Create.cshtml" />
+    <Content Include="Views\AdminCongNghes\Delete.cshtml" />
+    <Content Include="Views\AdminCongNghes\Details.cshtml" />
+    <Content Include="Views\AdminCongNghes\Edit.cshtml" />
+    <Content Include="Views\AdminCongNghes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
