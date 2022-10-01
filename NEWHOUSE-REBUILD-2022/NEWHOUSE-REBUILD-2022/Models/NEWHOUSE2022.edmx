@@ -46,7 +46,6 @@
           <Property Name="IDDuan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenDuan" Type="nvarchar" MaxLength="100" />
           <Property Name="IDTheLoaiDuAn" Type="int" />
-          <Property Name="SoThuTu" Type="int" />
           <Property Name="NgayThang" Type="datetime" />
           <Property Name="NoiDung" Type="ntext" />
           <Property Name="Hinh" Type="nvarchar(max)" />
@@ -83,7 +82,6 @@
           <Property Name="TuaDePhu" Type="nvarchar" MaxLength="100" />
           <Property Name="ThongTin" Type="ntext" />
           <Property Name="HinhGioiThieu" Type="nvarchar(max)" />
-          <Property Name="SoThuTu" Type="int" />
           <Property Name="TieuChi1" Type="nvarchar" MaxLength="100" />
           <Property Name="TieuChi2" Type="nvarchar" MaxLength="100" />
           <Property Name="TieuChi3" Type="nvarchar" MaxLength="100" />
@@ -259,7 +257,6 @@
           <Property Name="IDDuan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenDuan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="IDTheLoaiDuAn" Type="Int32" />
-          <Property Name="SoThuTu" Type="Int32" />
           <Property Name="NgayThang" Type="DateTime" Precision="3" />
           <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Hinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -297,7 +294,6 @@
           <Property Name="TuaDePhu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ThongTin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="HinhGioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="SoThuTu" Type="Int32" />
           <Property Name="TieuChi1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="TieuChi2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="TieuChi3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -480,7 +476,6 @@
                 <ScalarProperty Name="IDDuan" ColumnName="IDDuan" />
                 <ScalarProperty Name="TenDuan" ColumnName="TenDuan" />
                 <ScalarProperty Name="IDTheLoaiDuAn" ColumnName="IDTheLoaiDuAn" />
-                <ScalarProperty Name="SoThuTu" ColumnName="SoThuTu" />
                 <ScalarProperty Name="NgayThang" ColumnName="NgayThang" />
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="Hinh" ColumnName="Hinh" />
@@ -520,7 +515,6 @@
                 <ScalarProperty Name="TuaDePhu" ColumnName="TuaDePhu" />
                 <ScalarProperty Name="ThongTin" ColumnName="ThongTin" />
                 <ScalarProperty Name="HinhGioiThieu" ColumnName="HinhGioiThieu" />
-                <ScalarProperty Name="SoThuTu" ColumnName="SoThuTu" />
                 <ScalarProperty Name="TieuChi1" ColumnName="TieuChi1" />
                 <ScalarProperty Name="TieuChi2" ColumnName="TieuChi2" />
                 <ScalarProperty Name="TieuChi3" ColumnName="TieuChi3" />

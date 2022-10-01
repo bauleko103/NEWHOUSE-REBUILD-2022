@@ -25,7 +25,6 @@ namespace NEWHOUSE_REBUILD_2022.Models
         public string TuaDePhu { get; set; }
         public string ThongTin { get; set; }
         public string HinhGioiThieu { get; set; }
-        public Nullable<int> SoThuTu { get; set; }
         public string TieuChi1 { get; set; }
         public string TieuChi2 { get; set; }
         public string TieuChi3 { get; set; }

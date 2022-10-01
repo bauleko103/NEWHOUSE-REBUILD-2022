@@ -130,7 +130,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminCongNghesController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminDoiTacsController.cs" />
     <Compile Include="Controllers\AdminGiaiPhapsController.cs" />
+    <Compile Include="Controllers\AdminSanPhamsController.cs" />
     <Compile Include="Controllers\AdminSlidesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3237,10 +3239,24 @@
     <Content Include="Views\AdminCongNghes\Details.cshtml" />
     <Content Include="Views\AdminCongNghes\Edit.cshtml" />
     <Content Include="Views\AdminCongNghes\Index.cshtml" />
+    <Content Include="Views\AdminSanPhams\Create.cshtml" />
+    <Content Include="Views\AdminSanPhams\Delete.cshtml" />
+    <Content Include="Views\AdminSanPhams\Details.cshtml" />
+    <Content Include="Views\AdminSanPhams\Edit.cshtml" />
+    <Content Include="Views\AdminSanPhams\Index.cshtml" />
+    <Content Include="Views\AdminDoiTacs\Create.cshtml" />
+    <Content Include="Views\AdminDoiTacs\Delete.cshtml" />
+    <Content Include="Views\AdminDoiTacs\Details.cshtml" />
+    <Content Include="Views\AdminDoiTacs\Edit.cshtml" />
+    <Content Include="Views\AdminDoiTacs\Index.cshtml" />
+    <Content Include="Views\AdminDoiTacs\UploadFiles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\congnghe\" />
+    <Folder Include="Content\img\doitac\" />
     <Folder Include="Content\img\giaiphap\" />
+    <Folder Include="Content\UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

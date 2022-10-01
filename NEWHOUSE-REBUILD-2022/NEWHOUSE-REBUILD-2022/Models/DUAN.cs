@@ -23,7 +23,6 @@ namespace NEWHOUSE_REBUILD_2022.Models
         public int IDDuan { get; set; }
         public string TenDuan { get; set; }
         public Nullable<int> IDTheLoaiDuAn { get; set; }
-        public Nullable<int> SoThuTu { get; set; }
         public Nullable<System.DateTime> NgayThang { get; set; }
         public string NoiDung { get; set; }
         public string Hinh { get; set; }

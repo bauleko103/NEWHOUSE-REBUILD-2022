@@ -4,85 +4,115 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+ 
 
-<h2>Index</h2>
+<div id="content-wrapper" class="d-flex flex-column">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TuaDe11)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NoiDung11)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TuaDe12)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NoiDung12)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hinh1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TuaDe2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NoiDung2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hinh2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TuaDeChinh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TrichDan)
-        </th>
-        <th></th>
-    </tr>
+    <!-- Main Content -->
+    <div id="content">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TuaDe11)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NoiDung11)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TuaDe12)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NoiDung12)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hinh1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TuaDe2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NoiDung2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hinh2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TuaDeChinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrichDan)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+        <!-- Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid" style="margin-top:4rem">
 
-</table>
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">CÔNG NGHỆ</h1>
+            <p class="mb-4"></p>
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                   
+                    @foreach (var item in Model)
+                    {
+
+
+
+                        <a href="@Url.Action("Edit", new { id = item.ID })" class="btn btn-warning btn-circle">
+                            <i class="far fa-edit"></i>
+                        </a>
+
+
+                    }
+                </div>
+                
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Mục</th>
+                                    <th>Tựa đề</th>
+
+
+                                    <th>Nội dung</th>
+                                    <th>Hình</th>
+
+                                </tr>
+                            </thead>
+                            
+                            <tfoot>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th style="color:darkblue">Tựa đề chính và trích dẫn</th>
+                                        <th>@item.TuaDeChinh</th>
+
+                                        <th>@Html.Raw(@item.TrichDan)</th>
+
+
+
+                                    </tr>
+                                    <tr>
+                                        <th style="color:darkblue">Mục 1.1</th>
+                                        <th>@item.TuaDe11</th>
+
+                                        <th>@Html.Raw(@item.NoiDung11)</th>
+
+
+
+                                    </tr>
+                                    <tr>
+                                        <th style="color:darkblue">Mục 1.2</th>
+                                        <th>@item.TuaDe12</th>
+
+                                        <th>@Html.Raw(@item.NoiDung12)</th>
+                                        <th style="text-align:center"><img src="~/Content/img/congnghe/@item.Hinh1" style="width:100px;height:auto" /> </th>
+                                    </tr>
+
+                                    <tr>
+                                        <th style="color:darkblue">Mục 2</th>
+                                        <th>@item.TuaDe2</th>
+
+                                        <th>@Html.Raw(@item.NoiDung2)</th>
+                                        <th style="text-align:center"><img src="~/Content/img/congnghe/@item.Hinh2" style="width:100px;height:auto" /> </th>
+                                    </tr>
+
+                                }
+                                
+                            </tfoot>
+
+
+
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+    <!-- Footer -->
+    <!--<footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2019</span>
+            </div>
+        </div>
+    </footer>-->
+    <!-- End of Footer -->
+
+</div>
