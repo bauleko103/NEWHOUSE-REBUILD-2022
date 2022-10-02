@@ -136,6 +136,7 @@
     <Compile Include="Controllers\AdminSanPhamsController.cs" />
     <Compile Include="Controllers\AdminSlidesController.cs" />
     <Compile Include="Controllers\AdminTinhNangsController.cs" />
+    <Compile Include="Controllers\AdminTinTucsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -3256,6 +3257,10 @@
     <Content Include="Views\AdminTinhNangs\Delete.cshtml" />
     <Content Include="Views\AdminTinhNangs\Edit.cshtml" />
     <Content Include="Views\AdminTinhNangs\Index.cshtml" />
+    <Content Include="Views\AdminTinTucs\Create.cshtml" />
+    <Content Include="Views\AdminTinTucs\Delete.cshtml" />
+    <Content Include="Views\AdminTinTucs\Edit.cshtml" />
+    <Content Include="Views\AdminTinTucs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3263,6 +3268,7 @@
     <Folder Include="Content\img\doitac\" />
     <Folder Include="Content\img\giaiphap\" />
     <Folder Include="Content\img\tinhnang\" />
+    <Folder Include="Content\img\tintuc\" />
     <Folder Include="Content\UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
