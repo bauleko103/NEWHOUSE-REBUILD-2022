@@ -1,0 +1,100 @@
+﻿@model IEnumerable<NEWHOUSE_REBUILD_2022.Models.LoiGioiThieu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+ 
+<div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+        <!-- Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid" style="margin-top:4rem">
+
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">CÔNG NGHỆ</h1>
+            <p class="mb-4"></p>
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+
+                    @foreach (var item in Model)
+                    {
+
+
+
+                        <a href="@Url.Action("Edit", new { id = item.ID })" class="btn btn-warning btn-circle">
+                            <i class="far fa-edit"></i>
+                        </a>
+
+
+                    }
+                </div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Mục</th>
+                                    <th>Nội dung giới thiệu</th>
+
+
+                                    
+
+                                </tr>
+                            </thead>
+
+                            <tfoot>
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <th style="color:darkblue">Lời giới thiệu sản phẩm</th>
+
+
+                                        <th>@Html.Raw(@item.GioiThieuSanPham)</th>
+
+
+
+                                    </tr>
+                                    <tr>
+                                        <th style="color:darkblue">Lời giới thiệu tính năng</th>
+
+
+                                        <th>@Html.Raw(@item.GioiThieuTinhNang)</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="color:darkblue">Lời giới thiệu kiến trúc sư</th>
+
+
+                                        <th>@Html.Raw(@item.GioiThieuKTS)</th>
+
+
+
+                                    </tr>
+
+
+                                }
+
+                            </tfoot>
+
+
+
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    
+
+</div>
