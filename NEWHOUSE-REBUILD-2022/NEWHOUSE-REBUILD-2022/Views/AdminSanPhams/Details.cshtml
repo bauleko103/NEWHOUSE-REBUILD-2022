@@ -4,56 +4,96 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+ 
 
-<h2>Details</h2>
+<div id="content-wrapper" class="d-flex flex-column">
 
-<div>
-    <h4>SanPham</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TuaDe)
-        </dt>
+    <!-- Main Content -->
+    <div id="content">
 
-        <dd>
-            @Html.DisplayFor(model => model.TuaDe)
-        </dd>
+        <!-- Topbar -->
+        <!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid p-md-4">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TuaDePhu)
-        </dt>
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Dự án</h1>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.TuaDePhu)
-        </dd>
+            <div class=" ">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HinhGioiThieu)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.HinhGioiThieu)
-        </dd>
+                <div class="col-xl-12 col-md-12 mb-12">
+                    <div class="card  shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-4 p-4">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HinhChinh)
-        </dt>
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Tựa đề chính
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        @Html.DisplayFor(model => model.TuaDe)
+                                    </div>
+                                    <br />
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Tựa đề phụ
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        @Html.DisplayFor(model => model.TuaDePhu)
+                                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.HinhChinh)
-        </dd>
+                                    <Br />
+                                   
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ViTri)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ViTri)
-        </dd>
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Hình giới thiệu
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        <img class="HinhAnhDuAn" src="~/Content/img/sanpham/@Html.DisplayFor(model => model.HinhGioiThieu)" style="height: 20vh; width: auto;" />
+                                    </div>
+                                    <br />
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        NỘI DUNG
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        @Html.Raw(Model.NoiDung)
+                                    </div>
 
-    </dl>
+                                </div>
+
+                            </div>
+
+
+
+
+
+                            <a class="btn btn-back" href="@Url.Action("Index")">
+                                Trở về
+                            </a>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Tổng dự án Card Example -->
+
+
+
+            </div>
+
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+     
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

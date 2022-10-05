@@ -48,11 +48,11 @@
             <!-- Divider -->
             <!-- Nav Item - Dashboard -->
             <!--<li class="nav-item active">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>-->
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>-->
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -70,19 +70,40 @@
             </li>
             <!-- Nav Item - Kiến Trúc Sư -->
             <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "AdminLoiGioiThieux")">
+                    <i class="far fa-rebel"></i>
+                    <span>Lời giới thiệu</span>
+                </a>
+            </li>
+            <!-- Nav Item - Kiến Trúc Sư -->
+            <li class="nav-item">
                 <a class="nav-link" href="@Url.Action("Index", "AdminGiaiphaps")">
-                    <i class="far fa-address-card"></i>
+                    <i class="far fa-folder" "></i>
                     <span>Giải pháp</span>
                 </a>
             </li>
-
-            <!-- Nav Item - Tin Tức -->
+            <!-- Nav Item - Kiến Trúc Sư -->
             <li class="nav-item">
-                <a class="nav-link" href="@Url.Action("VIEW_NEWS")">
-                    <i class="far fa-file-alt"></i>
-                    <span>TIN TỨC</span>
+                <a class="nav-link" href="@Url.Action("Index", "AdminCongNghes")">
+                    <i class="far fa-folder" "></i>
+                    <span>Công nghệ</span>
                 </a>
             </li>
+            <!-- Nav Item - Kiến Trúc Sư -->
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "AdminSanPhams")">
+                    <i class="far fa-folder"></i>
+                    <span>Sản phẩm</span>
+                </a>
+            </li>
+            <!-- Nav Item - Kiến Trúc Sư -->
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "AdminTinhNangs")">
+                    <i class="far fa-folder"></i>
+                    <span>Tính năng</span>
+                </a>
+            </li>
+
 
 
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -95,10 +116,18 @@
             </div>
 
             <!-- Nav Item - Ảnh Trang Chủ -->
+
             <li class="nav-item">
-                <a class="nav-link" href="@Url.Action("VIEW_SLIDEHOME")">
-                    <i class="fas fa-ellipsis-h"></i>
-                    <span>ẢNH TRANG CHỦ</span>
+                <a class="nav-link" href="@Url.Action("Index", "AdminKTSs")">
+                    <i class="far fa-folder"></i>
+                    <span>Kiến trúc sư</span>
+                </a>
+            </li>
+            <!-- Nav Item - Kiến Trúc Sư -->
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "AdminDuAns")">
+                    <i class="far fa-folder"></i>
+                    <span>Dự án</span>
                 </a>
             </li>
 

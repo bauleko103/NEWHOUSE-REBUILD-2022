@@ -18,7 +18,7 @@ namespace NEWHOUSE_REBUILD_2022.Models
         public string TuaDe { get; set; }
         public string TuaDePhu { get; set; }
         public string HinhGioiThieu { get; set; }
-        public string HinhChinh { get; set; }
         public Nullable<int> ViTri { get; set; }
+        public string NoiDung { get; set; }
     }
 }

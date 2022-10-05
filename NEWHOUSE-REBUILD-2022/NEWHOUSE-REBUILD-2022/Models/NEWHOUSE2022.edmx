@@ -122,7 +122,7 @@
           <Property Name="TuaDe" Type="nvarchar" MaxLength="50" />
           <Property Name="TuaDePhu" Type="nvarchar" MaxLength="200" />
           <Property Name="HinhGioiThieu" Type="nvarchar(max)" />
-          <Property Name="HinhChinh" Type="nvarchar(max)" />
+          <Property Name="NoiDung" Type="ntext" />
           <Property Name="ViTri" Type="int" />
         </EntityType>
         <EntityType Name="Slide">
@@ -337,8 +337,8 @@
           <Property Name="TuaDe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TuaDePhu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="HinhGioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="HinhChinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ViTri" Type="Int32" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Slide">
           <Key>
@@ -555,11 +555,11 @@
           <EntitySetMapping Name="SanPhams">
             <EntityTypeMapping TypeName="NEWHOUSE2022Model.SanPham">
               <MappingFragment StoreEntitySet="SanPham">
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TuaDe" ColumnName="TuaDe" />
                 <ScalarProperty Name="TuaDePhu" ColumnName="TuaDePhu" />
                 <ScalarProperty Name="HinhGioiThieu" ColumnName="HinhGioiThieu" />
-                <ScalarProperty Name="HinhChinh" ColumnName="HinhChinh" />
                 <ScalarProperty Name="ViTri" ColumnName="ViTri" />
               </MappingFragment>
             </EntityTypeMapping>

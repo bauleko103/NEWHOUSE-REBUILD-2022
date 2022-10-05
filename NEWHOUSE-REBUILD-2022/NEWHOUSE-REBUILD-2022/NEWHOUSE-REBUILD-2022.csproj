@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKFinder, Version=2.4.1.2663, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\EZHUB\EZHUBvn\EZHUBvn\ContentWebmaster\CKFinder.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -130,6 +134,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminCongNghesController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminDoiTacsController.cs" />
     <Compile Include="Controllers\AdminGiaiPhapsController.cs" />
     <Compile Include="Controllers\AdminIconXaHoisController.cs" />
     <Compile Include="Controllers\AdminLoiGioiThieuxController.cs" />
@@ -138,6 +143,7 @@
     <Compile Include="Controllers\AdminTinhNangsController.cs" />
     <Compile Include="Controllers\AdminTinTucsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KTsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -597,6 +603,8 @@
     <Content Include="ContentAdmin\ckeditor\skins\moono-lisa\images\refresh.png" />
     <Content Include="ContentAdmin\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="ContentAdmin\ckeditor\styles.js" />
+    <Content Include="ContentAdmin\CKFinder.dll" />
+    <Content Include="ContentAdmin\CKFinder.pdb" />
     <Content Include="ContentAdmin\ckfinder\changelog.txt" />
     <Content Include="ContentAdmin\ckfinder\ckfinder.html" />
     <Content Include="ContentAdmin\ckfinder\ckfinder.js" />
@@ -3195,6 +3203,7 @@
     <Content Include="ContentAdmin\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="ContentAdmin\vendor\jquery\jquery.min.map" />
     <Content Include="ContentAdmin\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="ContentAdmin\package-lock.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3242,11 +3251,6 @@
     <Content Include="Views\AdminCongNghes\Details.cshtml" />
     <Content Include="Views\AdminCongNghes\Edit.cshtml" />
     <Content Include="Views\AdminCongNghes\Index.cshtml" />
-    <Content Include="Views\AdminSanPhams\Create.cshtml" />
-    <Content Include="Views\AdminSanPhams\Delete.cshtml" />
-    <Content Include="Views\AdminSanPhams\Details.cshtml" />
-    <Content Include="Views\AdminSanPhams\Edit.cshtml" />
-    <Content Include="Views\AdminSanPhams\Index.cshtml" />
     <Content Include="Views\AdminTinhNangs\Create.cshtml" />
     <Content Include="Views\AdminTinhNangs\Delete.cshtml" />
     <Content Include="Views\AdminTinhNangs\Edit.cshtml" />
@@ -3259,15 +3263,27 @@
     <Content Include="Views\AdminLoiGioiThieux\Index.cshtml" />
     <Content Include="Views\AdminIconXaHois\Edit.cshtml" />
     <Content Include="Views\AdminIconXaHois\Index.cshtml" />
+    <Content Include="Views\AdminSanPhams\Create.cshtml" />
+    <Content Include="Views\AdminSanPhams\Delete.cshtml" />
+    <Content Include="Views\AdminSanPhams\Details.cshtml" />
+    <Content Include="Views\AdminSanPhams\Edit.cshtml" />
+    <Content Include="Views\AdminSanPhams\Index.cshtml" />
+    <Content Include="Views\AdminDoiTacs\Create.cshtml" />
+    <Content Include="Views\AdminDoiTacs\Delete.cshtml" />
+    <Content Include="Views\AdminDoiTacs\Details.cshtml" />
+    <Content Include="Views\AdminDoiTacs\Edit.cshtml" />
+    <Content Include="Views\AdminDoiTacs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\img\congnghe\" />
     <Folder Include="Content\img\doitac\" />
     <Folder Include="Content\img\giaiphap\" />
+    <Folder Include="Content\img\sanpham\" />
     <Folder Include="Content\img\tinhnang\" />
     <Folder Include="Content\img\tintuc\" />
     <Folder Include="Content\UploadedFiles\" />
+    <Folder Include="Views\KTs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
