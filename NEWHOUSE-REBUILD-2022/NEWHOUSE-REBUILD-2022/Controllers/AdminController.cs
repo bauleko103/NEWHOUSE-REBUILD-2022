@@ -50,6 +50,10 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
 
         }
 
-         
+        public ActionResult DuAnVaKienTrucSu()
+        {
+            return View();
+        }
+
     }
 }

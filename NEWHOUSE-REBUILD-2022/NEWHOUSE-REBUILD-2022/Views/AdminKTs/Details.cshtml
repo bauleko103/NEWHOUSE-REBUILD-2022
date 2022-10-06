@@ -1,0 +1,75 @@
+﻿@model NEWHOUSE_REBUILD_2022.Models.KT
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TuaDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TuaDe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TuaDePhu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TuaDePhu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThongTin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThongTin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhGioiThieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhGioiThieu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuChi1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuChi1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuChi2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuChi2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuChi3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuChi3)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDKTS }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

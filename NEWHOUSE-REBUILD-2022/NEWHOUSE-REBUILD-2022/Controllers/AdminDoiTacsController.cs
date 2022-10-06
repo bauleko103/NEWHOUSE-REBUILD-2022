@@ -37,15 +37,15 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create( DoiTac doiTac, HttpPostedFileBase uploadhinh)
         {
-             
+            db.DoiTacs.Add(doiTac);
             db.SaveChanges();
             if (uploadhinh != null && uploadhinh.ContentLength > 0)
             {
-                int id = int.Parse(db.Slides.ToList().Last().ID.ToString());
+                int id = int.Parse(db.DoiTacs.ToList().Last().ID.ToString());
 
                 string _FileName = "";
                 int index = uploadhinh.FileName.IndexOf('.');
-                _FileName = "slide" + id.ToString() + "." + uploadhinh.FileName.Substring(index + 1);
+                _FileName = "doitac" + id.ToString() + "." + uploadhinh.FileName.Substring(index + 1);
                 string _path = Path.Combine(Server.MapPath("~/Content/img/doitac/"), _FileName);
                 uploadhinh.SaveAs(_path);
 
@@ -74,7 +74,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // POST: AdminDoiTacs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit( DoiTac doiTac, HttpPostedFileBase uploadhinh)
         {

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<NEWHOUSE_REBUILD_2022.Models.KT>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TuaDe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TuaDePhu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThongTin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhGioiThieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TieuChi1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TieuChi2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TieuChi3)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TuaDe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TuaDePhu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThongTin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhGioiThieu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TieuChi1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TieuChi2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TieuChi3)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDKTS }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDKTS }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDKTS })
+        </td>
+    </tr>
+}
+
+</table>

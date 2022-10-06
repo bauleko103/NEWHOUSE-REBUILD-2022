@@ -1,0 +1,65 @@
+﻿@model NEWHOUSE_REBUILD_2022.Models.DUAN
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DUAN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenDuan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDuan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDTheLoaiDuAn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDTheLoaiDuAn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayThang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayThang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

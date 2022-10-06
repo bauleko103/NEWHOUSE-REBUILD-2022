@@ -135,15 +135,18 @@
     <Compile Include="Controllers\AdminCongNghesController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminDoiTacsController.cs" />
+    <Compile Include="Controllers\AdminDUANsController.cs" />
     <Compile Include="Controllers\AdminGiaiPhapsController.cs" />
     <Compile Include="Controllers\AdminIconXaHoisController.cs" />
+    <Compile Include="Controllers\AdminKTsController.cs" />
+    <Compile Include="Controllers\AdminKTS_DUANController.cs" />
+    <Compile Include="Controllers\AdminLienHesController.cs" />
     <Compile Include="Controllers\AdminLoiGioiThieuxController.cs" />
     <Compile Include="Controllers\AdminSanPhamsController.cs" />
     <Compile Include="Controllers\AdminSlidesController.cs" />
     <Compile Include="Controllers\AdminTinhNangsController.cs" />
     <Compile Include="Controllers\AdminTinTucsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KTsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3270,9 +3273,26 @@
     <Content Include="Views\AdminSanPhams\Index.cshtml" />
     <Content Include="Views\AdminDoiTacs\Create.cshtml" />
     <Content Include="Views\AdminDoiTacs\Delete.cshtml" />
-    <Content Include="Views\AdminDoiTacs\Details.cshtml" />
     <Content Include="Views\AdminDoiTacs\Edit.cshtml" />
     <Content Include="Views\AdminDoiTacs\Index.cshtml" />
+    <Content Include="Views\AdminLienHes\Index.cshtml" />
+    <Content Include="Views\AdminLienHes\Edit.cshtml" />
+    <Content Include="Views\AdminDUANs\Create.cshtml" />
+    <Content Include="Views\AdminDUANs\Delete.cshtml" />
+    <Content Include="Views\AdminDUANs\Details.cshtml" />
+    <Content Include="Views\AdminDUANs\Edit.cshtml" />
+    <Content Include="Views\AdminDUANs\Index.cshtml" />
+    <Content Include="Views\AdminKTs\Create.cshtml" />
+    <Content Include="Views\AdminKTs\Delete.cshtml" />
+    <Content Include="Views\AdminKTs\Details.cshtml" />
+    <Content Include="Views\AdminKTs\Edit.cshtml" />
+    <Content Include="Views\AdminKTs\Index.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Create.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Delete.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Details.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Edit.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Index.cshtml" />
+    <Content Include="Views\Admin\DuAnVaKienTrucSu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3283,7 +3303,6 @@
     <Folder Include="Content\img\tinhnang\" />
     <Folder Include="Content\img\tintuc\" />
     <Folder Include="Content\UploadedFiles\" />
-    <Folder Include="Views\KTs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

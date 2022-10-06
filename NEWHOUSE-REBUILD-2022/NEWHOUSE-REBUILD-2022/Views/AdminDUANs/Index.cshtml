@@ -1,0 +1,58 @@
+﻿@model IEnumerable<NEWHOUSE_REBUILD_2022.Models.DUAN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDuan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDTheLoaiDuAn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayThang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hinh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDuan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDTheLoaiDuAn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayThang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiDung)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hinh)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDDuan }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDDuan }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDDuan })
+        </td>
+    </tr>
+}
+
+</table>
