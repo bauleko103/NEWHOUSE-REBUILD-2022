@@ -23,11 +23,12 @@ namespace NEWHOUSE_REBUILD_2022.Models
         public int IDKTS { get; set; }
         public string TuaDe { get; set; }
         public string TuaDePhu { get; set; }
-        public string ThongTin { get; set; }
-        public string HinhGioiThieu { get; set; }
-        public string TieuChi1 { get; set; }
-        public string TieuChi2 { get; set; }
-        public string TieuChi3 { get; set; }
+        public string NoiDung { get; set; }
+        public string Hinh { get; set; }
+        public string LoaiKTS { get; set; }
+        public string NgayThang { get; set; }
+        public string CongViec { get; set; }
+        public string GioiThieu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KTS_DUAN> KTS_DUAN { get; set; }

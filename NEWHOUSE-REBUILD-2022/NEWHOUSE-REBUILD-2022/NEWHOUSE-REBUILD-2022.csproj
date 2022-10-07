@@ -3277,6 +3277,12 @@
     <Content Include="Views\AdminDoiTacs\Index.cshtml" />
     <Content Include="Views\AdminLienHes\Index.cshtml" />
     <Content Include="Views\AdminLienHes\Edit.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Create.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Delete.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Details.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Edit.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Index.cshtml" />
+    <Content Include="Views\Admin\DuAnVaKienTrucSu.cshtml" />
     <Content Include="Views\AdminDUANs\Create.cshtml" />
     <Content Include="Views\AdminDUANs\Delete.cshtml" />
     <Content Include="Views\AdminDUANs\Details.cshtml" />
@@ -3287,18 +3293,14 @@
     <Content Include="Views\AdminKTs\Details.cshtml" />
     <Content Include="Views\AdminKTs\Edit.cshtml" />
     <Content Include="Views\AdminKTs\Index.cshtml" />
-    <Content Include="Views\AdminKTS_DUAN\Create.cshtml" />
-    <Content Include="Views\AdminKTS_DUAN\Delete.cshtml" />
-    <Content Include="Views\AdminKTS_DUAN\Details.cshtml" />
-    <Content Include="Views\AdminKTS_DUAN\Edit.cshtml" />
-    <Content Include="Views\AdminKTS_DUAN\Index.cshtml" />
-    <Content Include="Views\Admin\DuAnVaKienTrucSu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\img\congnghe\" />
     <Folder Include="Content\img\doitac\" />
+    <Folder Include="Content\img\duan\" />
     <Folder Include="Content\img\giaiphap\" />
+    <Folder Include="Content\img\kts\" />
     <Folder Include="Content\img\sanpham\" />
     <Folder Include="Content\img\tinhnang\" />
     <Folder Include="Content\img\tintuc\" />

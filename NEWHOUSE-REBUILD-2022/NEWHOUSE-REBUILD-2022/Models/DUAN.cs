@@ -21,11 +21,13 @@ namespace NEWHOUSE_REBUILD_2022.Models
         }
     
         public int IDDuan { get; set; }
-        public string TenDuan { get; set; }
-        public Nullable<int> IDTheLoaiDuAn { get; set; }
-        public Nullable<System.DateTime> NgayThang { get; set; }
+        public string TuaDe { get; set; }
+        public string TuaDePhu { get; set; }
+        public string NgayThang { get; set; }
         public string NoiDung { get; set; }
         public string Hinh { get; set; }
+        public string GioiThieu { get; set; }
+        public string LoaiDuAn { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KTS_DUAN> KTS_DUAN { get; set; }

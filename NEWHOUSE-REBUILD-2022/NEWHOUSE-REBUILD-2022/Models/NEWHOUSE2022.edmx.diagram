@@ -8,10 +8,8 @@
         <EntityTypeShape EntityType="NEWHOUSE2022Model.ADMIN" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.CongNghe" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.DoiTac" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NEWHOUSE2022Model.DUAN" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.GiaiPhap" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.IconXaHoi" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NEWHOUSE2022Model.KT" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.KTS_DUAN" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.LienHe" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.LoiGioiThieu" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
@@ -20,10 +18,12 @@
         <EntityTypeShape EntityType="NEWHOUSE2022Model.sysdiagram" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.TinhNang" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.TinTuc" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
-        <AssociationConnector Association="NEWHOUSE2022Model.FK_KTS_DUAN_DUAN" ManuallyRouted="false" />
-        <AssociationConnector Association="NEWHOUSE2022Model.FK_KTS_DUAN_KTS" ManuallyRouted="false" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.ThuVienSP" Width="1.5" PointX="5" PointY="11" />
         <AssociationConnector Association="NEWHOUSE2022Model.FK_ThuVienSP_SanPham" />
+        <EntityTypeShape EntityType="NEWHOUSE2022Model.DUAN" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NEWHOUSE2022Model.KT" Width="1.5" PointX="0.75" PointY="12.25" />
+        <AssociationConnector Association="NEWHOUSE2022Model.FK_KTS_DUAN_DUAN" />
+        <AssociationConnector Association="NEWHOUSE2022Model.FK_KTS_DUAN_KTS" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

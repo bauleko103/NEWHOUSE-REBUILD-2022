@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -15,7 +16,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         private NEWHOUSE2022Entities db = new NEWHOUSE2022Entities();
 
         // GET: AdminDUANs
-        public ActionResult Index()
+        public ActionResult Index( )
         {
             return View(db.DUANs.ToList());
         }
@@ -44,18 +45,30 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // POST: AdminDUANs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDDuan,TenDuan,IDTheLoaiDuAn,NgayThang,NoiDung,Hinh")] DUAN dUAN)
+        public ActionResult Create( DUAN dUAN, HttpPostedFileBase uploadhinh)
         {
-            if (ModelState.IsValid)
+             
+            db.DUANs.Add(dUAN);
+            db.SaveChanges();
+            if (uploadhinh != null && uploadhinh.ContentLength > 0)
             {
-                db.DUANs.Add(dUAN);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                int id = int.Parse(db.DUANs.ToList().Last().IDDuan.ToString());
 
-            return View(dUAN);
+                string _FileName = "";
+                int index = uploadhinh.FileName.IndexOf('.');
+                _FileName = "duan" + id.ToString() + "." + uploadhinh.FileName.Substring(index + 1);
+                string _path = Path.Combine(Server.MapPath("~/Content/img/duan/"), _FileName);
+                uploadhinh.SaveAs(_path);
+
+                DUAN unv = db.DUANs.FirstOrDefault(x => x.IDDuan == id);
+                unv.Hinh = _FileName;
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index", "AdminDUANs");
+
+             
         }
 
         // GET: AdminDUANs/Edit/5
@@ -73,20 +86,32 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
             return View(dUAN);
         }
 
-        // POST: AdminDUANs/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+
+        [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDDuan,TenDuan,IDTheLoaiDuAn,NgayThang,NoiDung,Hinh")] DUAN dUAN)
+        public ActionResult Edit( DUAN dUAN, HttpPostedFileBase uploadhinh)
         {
-            if (ModelState.IsValid)
+            
+
+            DUAN unv = db.DUANs.FirstOrDefault(x => x.IDDuan == dUAN.IDDuan);
+            unv.TuaDe = dUAN.TuaDe;
+            unv.TuaDePhu = dUAN.TuaDePhu;
+            unv.NgayThang = dUAN.NgayThang;
+            unv.NoiDung = dUAN.NoiDung;
+            unv.GioiThieu = dUAN.GioiThieu;
+            unv.LoaiDuAn = dUAN.LoaiDuAn;
+            if (uploadhinh != null && uploadhinh.ContentLength > 0)
             {
-                db.Entry(dUAN).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                int id = dUAN.IDDuan;
+                string _FileName = "";
+                int index = uploadhinh.FileName.IndexOf('.');
+                _FileName = "duan" + id.ToString() + "." + uploadhinh.FileName.Substring(index + 1);
+                string _path = Path.Combine(Server.MapPath("~/Content/img/duan"), _FileName);
+                uploadhinh.SaveAs(_path);
+                unv.Hinh = _FileName;
             }
-            return View(dUAN);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // GET: AdminDUANs/Delete/5

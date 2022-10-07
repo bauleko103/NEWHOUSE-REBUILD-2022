@@ -28,10 +28,8 @@ namespace NEWHOUSE_REBUILD_2022.Models
         public virtual DbSet<ADMIN> ADMINs { get; set; }
         public virtual DbSet<CongNghe> CongNghes { get; set; }
         public virtual DbSet<DoiTac> DoiTacs { get; set; }
-        public virtual DbSet<DUAN> DUANs { get; set; }
         public virtual DbSet<GiaiPhap> GiaiPhaps { get; set; }
         public virtual DbSet<IconXaHoi> IconXaHois { get; set; }
-        public virtual DbSet<KT> KTS { get; set; }
         public virtual DbSet<KTS_DUAN> KTS_DUAN { get; set; }
         public virtual DbSet<LienHe> LienHes { get; set; }
         public virtual DbSet<LoiGioiThieu> LoiGioiThieux { get; set; }
@@ -40,5 +38,7 @@ namespace NEWHOUSE_REBUILD_2022.Models
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TinhNang> TinhNangs { get; set; }
         public virtual DbSet<TinTuc> TinTucs { get; set; }
+        public virtual DbSet<DUAN> DUANs { get; set; }
+        public virtual DbSet<KT> KTS { get; set; }
     }
 }
