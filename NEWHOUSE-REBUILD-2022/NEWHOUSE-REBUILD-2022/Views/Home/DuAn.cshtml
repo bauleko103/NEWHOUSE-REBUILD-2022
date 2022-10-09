@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<NEWHOUSE_REBUILD_2022.Models.DUAN>
+
 @{
     Layout = null;
 }
@@ -27,293 +28,25 @@
     </div>
     <div class="section-content pb-0">
         <div id="works" class="four-col wide mt-50">
-            <div class="work-item branding video">
-                <div class="work-detail">
-                    <a href="detail-project.html">
-                        <img src="images/portfolio/1.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Vifagu</h3>
-                                    <p>Tavico Newhouse</p>
+            @foreach (var item in Model)
+            {
+                <div class="work-item branding video">
+                    <div class="work-detail">
+                        <a href="@Url.Action("DuAn_Details",new { id=item.IDDuan })">
+                            <img src="~/Content/images/portfolio/@item.Hinh" alt="">
+                            <div class="work-info">
+                                <div class="centrize">
+                                    <div class="v-center">
+                                        <h3>@item.TuaDe</h3>
+                                        <p>@item.TuaDePhu</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="work-item graphic printing">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/2.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Oishi Town</h3>
-                                    <p>28 Thảo Điền</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item printing branding">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/3.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Natural Life</h3>
-                                    <p>Đà Lạt</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item video graphic">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/4.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>3S House</h3>
-                                    <p>Đồng Nai</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item branding graphic">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/5.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Natural Life</h3>
-                                    <p>Phan Thiết</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item printing graphic">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/6.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Natural Life</h3>
-                                    <p>Nha Trang</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item printing branding">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/7.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Natural Life</h3>
-                                    <p>Phu Quoc</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/8.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Natural Life</h3>
-                                    <p>Cam Ranh</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/9.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Paramita Resort</h3>
-                                    <p>Phan Thiết</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/10.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Alana Resort</h3>
-                                    <p>Phan Thiết</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/11.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Fisher Village</h3>
-                                    <p>Phan Thiết</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/12.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Yen Bay Resort</h3>
-                                    <p>Cam Ranh</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
 
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/13.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>The Silk</h3>
-                                    <p>Ninh Bình</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/14.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Tanyoli</h3>
-                                    <p>Ninh Thuận</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/15.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>O House</h3>
-                                    <p>Phú Quốc</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/16.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>The Bar Spa - Dome</h3>
-                                    <p>28 Thảo Điền</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/17.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Cheo Leo Restaurent</h3>
-                                    <p>Làng Nhỏ - Hồ Láng Nhớt</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/19.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>The Karo</h3>
-                                    <p>Tavico Long Bình</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="work-item graphic video">
-                <div class="work-detail">
-                    <a href="portfolio-single-3.html">
-                        <img src="images/portfolio/20.png" alt="">
-                        <div class="work-info">
-                            <div class="centrize">
-                                <div class="v-center">
-                                    <h3>Nhà Lục Giác</h3>
-                                    <p>Thành Phố Thủ Đức</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            }
         </div>
         <!-- end of portfolio grid-->
     </div>

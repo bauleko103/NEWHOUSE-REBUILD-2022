@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<NEWHOUSE_REBUILD_2022.Models.KT>
 @{
     Layout = null;
 }
@@ -10,73 +10,33 @@
                 <div class="title txt-xs-center">
                     <h3 class="upper">Ngân Hàng Tác Phẩm Kiến Trúc</span></h3>
                     <hr>
-                    <p>
-                        Những tác phẩm chưa từng được công bố, tác phẩm là tâm huyết của các kiến trúc sư nhiều năm kinh nghiệm. Những kiến trúc sư nổi tiếng, ấp ủ những mẫu thiết kế mới, sáng tạo và vô cùng độc đáo.<br>
-                        Hãy sở hữu cho mình ngay một tác phẩm độc đáo nhất tại New House.<br>
-                        <b>
-                            TIẾT KIỆM THỜI GIAN VÀ TIỀN BẠC – KẾT NỐI SÁNG TẠO<br>
-                            Hơn 100 thiết kế độc đáo, đặc biệt đang chờ bạn.
-                        </b>
-                    </p>
-
+                    @Html.Raw(ViewBag.LoiGioiThieu.GioiThieuKTS)
                 </div>
             </div>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="shop-product">
-                            <div class="product-thumb">
-                                <a href="#">
-                                    <img src="images/architect/1.png" alt="">
-                                </a>
-                                <div class="product-overlay">
-                                    <a href="#" class="btn btn-color-out btn-sm">Xem Thêm</a>
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-4 col-sm-6">
+                            <div class="shop-product">
+                                <div class="product-thumb">
+                                    <a href="#">
+                                        <img src="~/Content/images/architect/@item.Hinh" alt="">
+                                    </a>
+                                    <div class="product-overlay">
+                                        <a href="@Url.Action("KienTrucSu_Details",new { id=item.IDKTS })" class="btn btn-color-out btn-sm">Xem Thêm</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="product-info">
-                                <h4 class="upper"><a href="#">KTS. Nguyễn Mạnh Quyến</a></h4>
-                                <div class="save-product">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="shop-product">
-                            <div class="product-thumb">
-                                <a href="#">
-                                    <img src="images/architect/2.png" alt="">
-                                </a>
-                                <div class="product-overlay">
-                                    <a href="#" class="btn btn-color-out btn-sm">Xem Thêm</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h4 class="upper"><a href="#">A7 Studio</a></h4>
-                                <div class="save-product">
-                                    <a href="#"></a>
+                                <div class="product-info">
+                                    <h4 class="upper"><a href="#">@item.TuaDe</a></h4>
+                                    <div class="save-product">
+                                        <a href="#"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="shop-product">
-                            <div class="product-thumb">
-                                <a href="#">
-                                    <img src="images/architect/3.png" alt="">
-                                </a>
-                                <div class="product-overlay">
-                                    <a href="#" class="btn btn-color-out btn-sm">Xem Thêm</a>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h4 class="upper"><a href="#">KTS. Nguyễn Hoà Hiệp</a></h4>
-                                <div class="save-product">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    }
                 </div>
                 <!-- end of row-->
             </div>

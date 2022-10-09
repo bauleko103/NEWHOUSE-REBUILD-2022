@@ -1,0 +1,39 @@
+﻿@model IEnumerable<NEWHOUSE_REBUILD_2022.Models.SanPham>
+
+@{
+    Layout = null;
+}
+
+<section id="4type">
+    <div class="container">
+        <div class="title left">
+            <h2>Sản Phẩm</h2>
+            <hr>
+            @Html.Raw(ViewBag.LoiGioiThieu.GioiThieuSanPham)
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 col-sm-6">
+                    <div class="shop-product">
+                        <div class="product-thumb">
+                            <a href="detail-product.html">
+                                <img src="~/Content/images/4type/@item.HinhGioiThieu" alt="">
+                            </a>
+                            <div class="product-overlay">
+                                <a href="@Url.Action("SanPham_Details",new { id=item.ID })" class="btn btn-color-out btn-sm">Xem tiếp</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="upper"><a href="detail-product.html">@item.TuaDe</a></h4>
+                            <!-- <div class="save-product"><a href="#"><i class="icon-heart"></i></a>
+                    </div> -->
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- end of row-->
+    </div>
+    <!-- end of container-->
+</section>

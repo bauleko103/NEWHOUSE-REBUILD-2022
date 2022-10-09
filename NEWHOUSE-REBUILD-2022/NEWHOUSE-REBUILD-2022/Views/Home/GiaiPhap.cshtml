@@ -1,0 +1,42 @@
+﻿@model IEnumerable<NEWHOUSE_REBUILD_2022.Models.GiaiPhap>
+
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <section id="about">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-4 img-side img-left">
+                    <div class="img-holder">
+                        <img src="~/Content/images/about/@item.Hinh" alt="" class="bg-img">
+                    </div>
+                </div>
+                <!-- end of side background image-->
+            </div>
+            <!-- end of row-->
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-7 col-sm-8 col-sm-offset-4">
+                    <ul role="tablist" class="nav nav-tabs outline">
+                        <li role="presentation" class="active">
+                            <a href="#method-tab" role="tab" data-toggle="tab"><b>@item.TuaDe</b></a>
+                        </li>
+                    </ul>
+                    <!-- end of nav tabs-->
+                    <div class="tab-content">
+                        <div id="method-tab" role="tabpanel" class="tab-pane fade in active">
+                            <p class="alt-paragraph mb-15">
+                                @Html.Raw(item.NoiDung)
+                            </p>
+                        </div>
+                    </div>
+                    <!-- end of tab content-->
+                </div>
+            </div>
+        </div>
+    </section>
+}

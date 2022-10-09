@@ -1,0 +1,92 @@
+﻿@model IEnumerable<NEWHOUSE_REBUILD_2022.Models.CongNghe>
+
+@{
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+    <section class="dark">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-4 img-side img-right">
+                    <div class="img-holder">
+                        <img src="~/Content/images/about/@item.Hinh1" alt="" class="bg-img">
+                    </div>
+                </div>
+                <!-- end of side background image-->
+            </div>
+            <!-- end of row-->
+        </div>
+        <!-- end of container-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-7 txt-md-left">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>@item.TuaDeChinh</h3>
+                            <hr>
+                        </div>
+                        <div class="col-md-12">
+                            <div>
+                                <h4>@item.TuaDe11</h4>
+                                @Html.Raw(item.NoiDung11)
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div>
+                                <h4>@item.TuaDe12</h4>
+                                @Html.Raw(item.NoiDung12)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of container-->
+    </section>
+
+    <section id="expertise" class="dark">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-4 img-side img-left">
+                    <div class="img-holder">
+                        <img src="@item.Hinh2" alt="" class="bg-img">
+                    </div>
+                </div>
+                <!-- end of side background image-->
+            </div>
+            <!-- end of row-->
+        </div>
+        <!-- end of container-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-7 col-sm-8 col-sm-offset-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <h4>@item.TuaDe2</h4>
+                                <p>@item.NoiDung2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of row-->
+        </div>
+        <!-- end of container-->
+    </section>
+
+
+    <section id="intro">
+        <div class="container">
+            <div class="title center">
+                <!-- <h4 class="upper">We are driven by creative.</h4> -->
+                @Html.Raw(item.TrichDan)
+                <hr>
+            </div>
+
+            <!-- end of section content-->
+        </div>
+        <!-- end of container-->
+    </section>
+}

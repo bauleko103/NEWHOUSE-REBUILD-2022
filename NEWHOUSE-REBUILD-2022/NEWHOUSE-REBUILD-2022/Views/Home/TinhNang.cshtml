@@ -1,0 +1,33 @@
+﻿@model IEnumerable<NEWHOUSE_REBUILD_2022.Models.TinhNang>
+
+@{
+    Layout = null;
+}
+
+<section>
+    <div class="container">
+        <div class="title left">
+            <h2>Tính Năng</h2>
+            <hr>
+            @Html.Raw(ViewBag.LoiGioiThieu.GioiThieuTinhNang)
+        </div>
+        <div class="section-content">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-6 col-sm-6">
+                        <div class="icon-box-basic">
+                            <i class="ti-palette"></i>
+                            <h4>@item.TuaDe</h4>
+                            @Html.Raw(item.NoiDung)
+                        </div>
+                    </div>
+
+                }
+            </div>
+            <!-- end of row-->
+        </div>
+        <!-- end of section content-->
+    </div>
+    <!-- end of container-->
+</section>
