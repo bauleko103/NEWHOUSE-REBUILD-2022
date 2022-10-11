@@ -53,7 +53,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
             db.SaveChanges();
             if (uploadhinh != null && uploadhinh.ContentLength > 0)
             {
-                int id = int.Parse(db.DoiTacs.ToList().Last().ID.ToString());
+                int id = int.Parse(db.KTS.ToList().Last().IDKTS.ToString());
 
                 string _FileName = "";
                 int index = uploadhinh.FileName.IndexOf('.');
@@ -66,6 +66,8 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
                 db.SaveChanges();
             }
             return RedirectToAction("Index", "AdminKTs");
+ 
+
         }
 
         // GET: AdminKTs/Edit/5

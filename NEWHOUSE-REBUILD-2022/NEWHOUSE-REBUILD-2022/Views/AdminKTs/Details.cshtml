@@ -5,71 +5,95 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>KT</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TuaDe)
-        </dt>
+<div id="content-wrapper" class="d-flex flex-column">
 
-        <dd>
-            @Html.DisplayFor(model => model.TuaDe)
-        </dd>
+    <!-- Main Content -->
+    <div id="content">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TuaDePhu)
-        </dt>
+        <!-- Topbar -->
+        <!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid p-md-4">
 
-        <dd>
-            @Html.DisplayFor(model => model.TuaDePhu)
-        </dd>
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Dự án</h1>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ThongTin)
-        </dt>
+            <div class=" ">
 
-        <dd>
-            @Html.DisplayFor(model => model.ThongTin)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HinhGioiThieu)
-        </dt>
+                <div class="col-xl-12 col-md-12 mb-12">
+                    <div class="card  shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-4 p-4">
 
-        <dd>
-            @Html.DisplayFor(model => model.HinhGioiThieu)
-        </dd>
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Tựa đề chính
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        @Html.DisplayFor(model => model.TuaDe)
+                                    </div>
+                                    <br />
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Tựa đề phụ
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        @Html.DisplayFor(model => model.TuaDePhu)
+                                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TieuChi1)
-        </dt>
+                                    <Br />
 
-        <dd>
-            @Html.DisplayFor(model => model.TieuChi1)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TieuChi2)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TieuChi2)
-        </dd>
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Hình giới thiệu
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        <img class="HinhAnhDuAn" src="~/Content/img/kts/@Html.DisplayFor(model => model.Hinh)" style="height: 20vh; width: auto;" />
+                                    </div>
+                                    <br />
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        NỘI DUNG
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        @Html.Raw(Model.NoiDung)
+                                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TieuChi3)
-        </dt>
+                                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.TieuChi3)
-        </dd>
+                            </div>
 
-    </dl>
+
+
+
+
+                            <a class="btn btn-back" href="@Url.Action("Index")">
+                                Trở về
+                            </a>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Tổng dự án Card Example -->
+
+
+
+            </div>
+
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IDKTS }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
