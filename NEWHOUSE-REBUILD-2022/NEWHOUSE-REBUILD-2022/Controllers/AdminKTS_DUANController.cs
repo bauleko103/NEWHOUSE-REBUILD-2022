@@ -14,12 +14,11 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
     {
         private NEWHOUSE2022Entities db = new NEWHOUSE2022Entities();
 
-
-
         // GET: AdminKTS_DUAN
         public ActionResult Index()
         {
             var kTS_DUAN = db.KTS_DUAN.Include(k => k.DUAN).Include(k => k.KT);
+
             return View(kTS_DUAN.ToList());
         }
 
@@ -41,7 +40,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // GET: AdminKTS_DUAN/Create
         public ActionResult Create()
         {
-            ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TenDuan");
+            ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe");
             ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe");
             return View();
         }
@@ -55,19 +54,17 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         {
             if (ModelState.IsValid)
             {
-                
-                
-                
+
                 db.KTS_DUAN.Add(kTS_DUAN);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TenDuan", kTS_DUAN.IDDuan);
+            ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", kTS_DUAN.IDDuan);
             ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", kTS_DUAN.IDKTS);
             return View(kTS_DUAN);
         }
-         
+
         // GET: AdminKTS_DUAN/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -80,7 +77,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TenDuan", kTS_DUAN.IDDuan);
+            ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", kTS_DUAN.IDDuan);
             ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", kTS_DUAN.IDKTS);
             return View(kTS_DUAN);
         }
@@ -98,7 +95,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TenDuan", kTS_DUAN.IDDuan);
+            ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", kTS_DUAN.IDDuan);
             ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", kTS_DUAN.IDKTS);
             return View(kTS_DUAN);
         }

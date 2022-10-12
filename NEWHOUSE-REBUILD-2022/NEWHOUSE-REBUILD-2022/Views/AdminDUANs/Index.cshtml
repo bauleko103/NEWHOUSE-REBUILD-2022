@@ -39,15 +39,20 @@
                                 </tr>
                             </thead>
                             <tfoot>
+
                                 @foreach (var item in Model)
                                 {
-                                <tr>
-                                    <th>@item.TuaDe</th>
-                                    <th>@item.TuaDePhu</th>
-                                    <th style="text-align:center"><img src="~/Content/img/duan/@item.Hinh" style="width:100px;height:auto" /> </th>
-                                    <th>@item.LoaiDuAn</th>
-                                    <th>Kiến trúc sư - chưa thêm đc</th> 
-                                    <th>@item.NgayThang</th>
+                                    <tr>
+                                        <th>@item.TuaDe</th>
+                                        <th>@item.TuaDePhu</th>
+                                        <th style="text-align:center"><img src="~/Content/img/duan/@item.Hinh" style="width:100px;height:auto" /> </th>
+                                        <th>@item.LoaiDuAn</th>
+                                        <th>
+                                            @{string listKTS; }
+                                            @foreach (var item2 in ViewBag.ID)
+                                            {
+                                                if (@item.IDDuan == @item2.IDDuan )
+                                                {
 
                                     <th>
                                         <a href="@Url.Action("Details", new { id = item.IDDuan })" class="btn btn-default btn-circle">
@@ -65,7 +70,30 @@
                                         </a>
                                     </th>
 
-                                </tr>
+                                            }
+
+
+                                        </th>
+                                        <th>@item.NgayThang</th>
+
+
+                                        <th>
+                                            <a href="@Url.Action("Details", new { id = item.IDDuan })" class="btn btn-default btn-circle">
+                                                <i class="far fa-edit"></i>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a href="@Url.Action("Edit", new { id = item.IDDuan })" class="btn btn-warning btn-circle">
+                                                <i class="far fa-edit"></i>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a href="@Url.Action("Delete", new { id = item.IDDuan })" class="btn btn-danger btn-circle">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </th>
+
+                                    </tr>
 
                                 }
                                 <br />

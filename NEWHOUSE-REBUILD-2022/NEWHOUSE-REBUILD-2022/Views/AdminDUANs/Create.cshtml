@@ -1,10 +1,10 @@
 ﻿@model NEWHOUSE_REBUILD_2022.Models.DUAN
-
+ 
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
- 
+
 
 <script src="~/ContentAdmin/ckeditor/ckeditor.js"></script>
 <div id="content-wrapper" class="d-flex flex-column">
@@ -51,7 +51,9 @@
 
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Tựa Đề
+
                                         </div>
+
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
 
                                             @Html.EditorFor(model => model.TuaDe, new { htmlAttributes = new { @class = "form-control" } })
@@ -83,8 +85,8 @@
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
 
-                                            @Html.EditorFor(model => model.TuaDePhu, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.TuaDePhu, "", new { @class = "text-danger" })
+                                            @Html.EditorFor(model => model.LoaiDuAn, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.LoaiDuAn, "", new { @class = "text-danger" })
                                         </div>
                                         <Br />
 
@@ -101,14 +103,25 @@
                                         <Br />
 
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                           Ngày làm
+                                            Ngày làm
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
 
                                             @Html.EditorFor(model => model.NgayThang, new { htmlAttributes = new { @class = "form-control" ,@type="date"} })
                                             @Html.ValidationMessageFor(model => model.NgayThang, "", new { @class = "text-danger" })
                                         </div>
+                                        <br />
+                                        <hr />
 
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Kiến trúc sư
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+
+                                            @Html.DropDownList("IDKTS", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.IDKTS, "", new { @class = "text-danger" })
+                                        </div>
+                                        <br />
                                         <div class="col mr-12 p-4" style="display:flex; justify-content: flex-end;">
                                             <button type="submit" class="btn button-crud" value="Save">
                                                 Tạo
@@ -137,7 +150,7 @@
 
                 }
             </div>
-            <!-- /.container-fluid -->
+            
 
         </div>
         <!-- End of Main Content -->
