@@ -48,33 +48,21 @@
                                         <th style="text-align:center"><img src="~/Content/img/duan/@item.Hinh" style="width:100px;height:auto" /> </th>
                                         <th>@item.LoaiDuAn</th>
                                         <th>
-                                            @{string listKTS; }
+                                            @{string listKTS; int dem = 0; }
                                             @foreach (var item2 in ViewBag.ID)
                                             {
-                                                if (@item.IDDuan == @item2.IDDuan )
+                                                if (@item.IDDuan == @item2.IDDuan  )
                                                 {
-
-                                    <th>
-                                        <a href="@Url.Action("Details", new { id = item.IDDuan })" class="btn btn-default btn-circle">
-                                            <i class="far fa-pen-alt" style="color:black"></i>
-                                        </a>
-                                    </th>
-                                    <th>
-                                        <a href="@Url.Action("Edit", new { id = item.IDDuan })" class="btn btn-warning btn-circle">
-                                            <i class="far fa-edit"></i>
-                                        </a>
-                                    </th>
-                                    <th>
-                                        <a href="@Url.Action("Delete", new { id = item.IDDuan })" class="btn btn-danger btn-circle">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                    </th>
+                                                    listKTS = " "+ @item2.KT.TuaDe + " ";
+                                                    <p> @listKTS</p>
+                                                }
+                                                
 
                                             }
 
 
-                                        </th>
-                                        <th>@item.NgayThang</th>
+
+<th>@item.NgayThang</th>
 
 
                                         <th>

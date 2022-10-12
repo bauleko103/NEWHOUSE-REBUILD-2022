@@ -60,18 +60,18 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( DUAN dUAN, HttpPostedFileBase uploadhinh,  KTS_DUAN kTS_DUAN)
+        public ActionResult Create( DUAN dUAN, HttpPostedFileBase uploadhinh,  KTS_DUAN kTS_DUAN,  string chuoi )
         {
-            //ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", kTS_DUAN.IDDuan);
-            ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", dUAN.IDDuan);
+            /* //ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", kTS_DUAN.IDDuan);
+             ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", dUAN.IDDuan);
+
+             kTS_DUAN.KT.TuaDe = ViewBag.IDKTS;
+             db.KTS_DUAN.Add(kTS_DUAN);
+             db.SaveChanges();*/
+         
+            db.DUANs.Add(dUAN); 
+            db.SaveChanges();
             
-            kTS_DUAN.KT.TuaDe = ViewBag.IDKTS;
-            db.KTS_DUAN.Add(kTS_DUAN);
-            db.SaveChanges();
-            db.DUANs.Add(dUAN);
-            db.SaveChanges();
-             
-             
             if (uploadhinh != null && uploadhinh.ContentLength > 0)
             {
                 int id = int.Parse(db.DUANs.ToList().Last().IDDuan.ToString());
@@ -86,7 +86,13 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
                 unv.Hinh = _FileName;
                 db.SaveChanges();
             }
-            
+
+
+            kTS_DUAN.IDDuan = dUAN.IDDuan;
+            kTS_DUAN.IDKTS =chuoi;
+            db.KTS_DUAN.Add(kTS_DUAN);
+            ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", dUAN.IDDuan);
+            db.SaveChanges();
             return RedirectToAction("Index", "AdminDUANs");
 
              
