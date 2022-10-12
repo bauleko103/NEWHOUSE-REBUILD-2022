@@ -11,21 +11,7 @@
     <h4>DUAN</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TenDuan)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TenDuan)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IDTheLoaiDuAn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IDTheLoaiDuAn)
-        </dd>
+        
 
         <dt>
             @Html.DisplayNameFor(model => model.NgayThang)
@@ -50,7 +36,14 @@
         <dd>
             @Html.DisplayFor(model => model.Hinh)
         </dd>
+        <dd>
+           TÁC GIẢ
+            @foreach (var item in ViewBag.hinhanh)
+            {
 
+                @item.TuaDe
+            }
+        </dd>
     </dl>
 </div>
 <p>

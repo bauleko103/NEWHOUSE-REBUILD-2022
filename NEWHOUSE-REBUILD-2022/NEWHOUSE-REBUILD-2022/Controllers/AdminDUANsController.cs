@@ -18,6 +18,11 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // GET: AdminDUANs
         public ActionResult Index( )
         {
+            //var kTS_DUAN = db.KTS_DUAN.Include(k => k.DUAN).Include(k => k.KT);
+
+            ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe");
+           
+            ViewBag.ID = db.KTS_DUAN.Include(k => k.DUAN).Include(k => k.KT);
             return View(db.DUANs.ToList());
         }
 
@@ -29,16 +34,24 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             DUAN dUAN = db.DUANs.Find(id);
+           
             if (dUAN == null)
             {
                 return HttpNotFound();
             }
+            var hinhanh = from HA in db.DUANs
+                          join DA in db.KTS_DUAN on HA.IDDuan equals DA.IDDuan
+                          where DA.ID == id
+                          select HA;
+            ViewBag.hinhanh = hinhanh;
             return View(dUAN);
         }
 
         // GET: AdminDUANs/Create
         public ActionResult Create()
         {
+            ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe");
+            ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe");
             return View();
         }
 
@@ -47,11 +60,18 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( DUAN dUAN, HttpPostedFileBase uploadhinh)
+        public ActionResult Create( DUAN dUAN, HttpPostedFileBase uploadhinh,  KTS_DUAN kTS_DUAN)
         {
-             
+            //ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", kTS_DUAN.IDDuan);
+            ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", dUAN.IDDuan);
+            
+            kTS_DUAN.KT.TuaDe = ViewBag.IDKTS;
+            db.KTS_DUAN.Add(kTS_DUAN);
+            db.SaveChanges();
             db.DUANs.Add(dUAN);
             db.SaveChanges();
+             
+             
             if (uploadhinh != null && uploadhinh.ContentLength > 0)
             {
                 int id = int.Parse(db.DUANs.ToList().Last().IDDuan.ToString());
@@ -66,6 +86,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
                 unv.Hinh = _FileName;
                 db.SaveChanges();
             }
+            
             return RedirectToAction("Index", "AdminDUANs");
 
              
