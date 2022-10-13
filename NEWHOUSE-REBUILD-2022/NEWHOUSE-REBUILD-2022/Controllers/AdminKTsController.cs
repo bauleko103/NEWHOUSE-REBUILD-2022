@@ -78,7 +78,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDKTS,TuaDe,TuaDePhu,NoiDung,Hinh,LoaiKTS,NgayThang,CongViec,GioiThieu")] KT kT)
+        public ActionResult Edit(KT kT, HttpPostedFileBase uploadhinh)
         {
              KT unv = db.KTS.FirstOrDefault(x => x.IDKTS == kT.IDKTS);
             unv.TuaDe = kT.TuaDe;

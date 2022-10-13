@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NEWHOUSE2022Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="NEWHOUSE2022Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ADMIN">
           <Key>
             <PropertyRef Name="ID" />
@@ -137,21 +137,22 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'NEWHOUSE2022.dbo.ThongTinKhach' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="ThongTinKhach">
-          <Property Name="ID" Type="int" />
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
           <Property Name="SoDienThoai" Type="varchar" MaxLength="50" />
           <Property Name="Mail" Type="varchar" MaxLength="50" />
           <Property Name="ThongTin" Type="ntext" />
-        </EntityType>-->
+        </EntityType>
         <EntityType Name="TinhNang">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TuaDe" Type="nvarchar" MaxLength="50" />
+          <Property Name="TuaDe" Type="nvarchar" MaxLength="200" />
           <Property Name="Hinh" Type="nvarchar(max)" />
           <Property Name="NoiDung" Type="nvarchar" MaxLength="200" />
         </EntityType>
@@ -202,6 +203,7 @@ warning 6013: The table/view 'NEWHOUSE2022.dbo.ThongTinKhach' does not have a pr
           <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Slide" EntityType="Self.Slide" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThongTinKhach" EntityType="Self.ThongTinKhach" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TinhNang" EntityType="Self.TinhNang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_KTS_DUAN_DUAN" Association="Self.FK_KTS_DUAN_DUAN">
@@ -213,8 +215,7 @@ warning 6013: The table/view 'NEWHOUSE2022.dbo.ThongTinKhach' does not have a pr
             <End Role="KTS_DUAN" EntitySet="KTS_DUAN" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NEWHOUSE2022Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -359,7 +360,7 @@ warning 6013: The table/view 'NEWHOUSE2022.dbo.ThongTinKhach' does not have a pr
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TuaDe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TuaDe" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Hinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NoiDung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -420,7 +421,18 @@ warning 6013: The table/view 'NEWHOUSE2022.dbo.ThongTinKhach' does not have a pr
             <End Role="KTS" EntitySet="KTS" />
             <End Role="KTS_DUAN" EntitySet="KTS_DUAN" />
           </AssociationSet>
+          <EntitySet Name="ThongTinKhaches" EntityType="NEWHOUSE2022Model.ThongTinKhach" />
         </EntityContainer>
+        <EntityType Name="ThongTinKhach">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ThongTin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -589,6 +601,17 @@ warning 6013: The table/view 'NEWHOUSE2022.dbo.ThongTinKhach' does not have a pr
                 <ScalarProperty Name="TuaDe" ColumnName="TuaDe" />
                 <ScalarProperty Name="Hinh" ColumnName="Hinh" />
                 <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThongTinKhaches">
+            <EntityTypeMapping TypeName="NEWHOUSE2022Model.ThongTinKhach">
+              <MappingFragment StoreEntitySet="ThongTinKhach">
+                <ScalarProperty Name="ThongTin" ColumnName="ThongTin" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -40,5 +40,6 @@ namespace NEWHOUSE_REBUILD_2022.Models
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TinhNang> TinhNangs { get; set; }
         public virtual DbSet<TinTuc> TinTucs { get; set; }
+        public virtual DbSet<ThongTinKhach> ThongTinKhaches { get; set; }
     }
 }

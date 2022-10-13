@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="267975fcc7f34b8bbef30555f3ac89f2" Name="Diagram1">
+      <Diagram DiagramId="8b4f5224b372436eb0683a8e97f64410" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="NEWHOUSE2022Model.ADMIN" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.CongNghe" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.DoiTac" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="NEWHOUSE2022Model.KT" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.KTS_DUAN" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.LienHe" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NEWHOUSE2022Model.LoiGioiThieu" Width="1.875" PointX="0.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NEWHOUSE2022Model.LoiGioiThieu" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.SanPham" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.Slide" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.sysdiagram" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
@@ -22,6 +22,7 @@
         <EntityTypeShape EntityType="NEWHOUSE2022Model.TinTuc" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
         <AssociationConnector Association="NEWHOUSE2022Model.FK_KTS_DUAN_DUAN" ManuallyRouted="false" />
         <AssociationConnector Association="NEWHOUSE2022Model.FK_KTS_DUAN_KTS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NEWHOUSE2022Model.ThongTinKhach" Width="1.5" PointX="7.375" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

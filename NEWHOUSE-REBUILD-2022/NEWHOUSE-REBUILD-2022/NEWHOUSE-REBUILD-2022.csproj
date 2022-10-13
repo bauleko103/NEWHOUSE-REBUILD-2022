@@ -204,6 +204,9 @@
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>NEWHOUSE2022.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ThongTinKhach.cs">
+      <DependentUpon>NEWHOUSE2022.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TinhNang.cs">
       <DependentUpon>NEWHOUSE2022.tt</DependentUpon>
     </Compile>
