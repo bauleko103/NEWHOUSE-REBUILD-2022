@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -45,29 +44,18 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // POST: AdminKTs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost, ValidateInput(false)]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( KT kT, HttpPostedFileBase uploadhinh)
+        public ActionResult Create([Bind(Include = "IDKTS,TuaDe,TuaDePhu,NoiDung,Hinh,LoaiKTS,NgayThang,CongViec,GioiThieu")] KT kT)
         {
-            db.KTS.Add(kT);
-            db.SaveChanges();
-            if (uploadhinh != null && uploadhinh.ContentLength > 0)
+            if (ModelState.IsValid)
             {
-                int id = int.Parse(db.KTS.ToList().Last().IDKTS.ToString());
-
-                string _FileName = "";
-                int index = uploadhinh.FileName.IndexOf('.');
-                _FileName = "kts" + id.ToString() + "." + uploadhinh.FileName.Substring(index + 1);
-                string _path = Path.Combine(Server.MapPath("~/Content/img/kts/"), _FileName);
-                uploadhinh.SaveAs(_path);
-
-                KT unv = db.KTS.FirstOrDefault(x => x.IDKTS == id);
-                unv.Hinh = _FileName;
+                db.KTS.Add(kT);
                 db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            return RedirectToAction("Index", "AdminKTs");
- 
 
+            return View(kT);
         }
 
         // GET: AdminKTs/Edit/5
@@ -88,9 +76,9 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // POST: AdminKTs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost, ValidateInput(false)]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit( KT kT, HttpPostedFileBase uploadhinh)
+        public ActionResult Edit([Bind(Include = "IDKTS,TuaDe,TuaDePhu,NoiDung,Hinh,LoaiKTS,NgayThang,CongViec,GioiThieu")] KT kT)
         {
              KT unv = db.KTS.FirstOrDefault(x => x.IDKTS == kT.IDKTS);
             unv.TuaDe = kT.TuaDe;
@@ -101,16 +89,11 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
            
             if (uploadhinh != null && uploadhinh.ContentLength > 0)
             {
-                int id = kT.IDKTS;
-                string _FileName = "";
-                int index = uploadhinh.FileName.IndexOf('.');
-                _FileName = "kts" + id.ToString() + "." + uploadhinh.FileName.Substring(index + 1);
-                string _path = Path.Combine(Server.MapPath("~/Content/img/kts"), _FileName);
-                uploadhinh.SaveAs(_path);
-                unv.Hinh = _FileName;
+                db.Entry(kT).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            return View(kT);
         }
 
         // GET: AdminKTs/Delete/5

@@ -3314,26 +3314,26 @@
     <Content Include="Views\AdminDoiTacs\Index.cshtml" />
     <Content Include="Views\AdminLienHes\Index.cshtml" />
     <Content Include="Views\AdminLienHes\Edit.cshtml" />
-    <Content Include="Views\AdminKTS_DUAN\Create.cshtml" />
-    <Content Include="Views\AdminKTS_DUAN\Delete.cshtml" />
-    <Content Include="Views\AdminKTS_DUAN\Details.cshtml" />
-    <Content Include="Views\AdminKTS_DUAN\Edit.cshtml" />
-    <Content Include="Views\AdminKTS_DUAN\Index.cshtml" />
     <Content Include="Views\Admin\DuAnVaKienTrucSu.cshtml" />
     <Content Include="Views\AdminDUANs\Create.cshtml" />
     <Content Include="Views\AdminDUANs\Delete.cshtml" />
     <Content Include="Views\AdminDUANs\Details.cshtml" />
     <Content Include="Views\AdminDUANs\Edit.cshtml" />
     <Content Include="Views\AdminDUANs\Index.cshtml" />
+    <Content Include="Views\Home\GiaiPhap.cshtml" />
+    <Content Include="Views\Home\CongNghe.cshtml" />
+    <Content Include="Views\Home\SanPham.cshtml" />
+    <Content Include="Views\Home\TinhNang.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Create.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Delete.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Details.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Edit.cshtml" />
+    <Content Include="Views\AdminKTS_DUAN\Index.cshtml" />
     <Content Include="Views\AdminKTs\Create.cshtml" />
     <Content Include="Views\AdminKTs\Delete.cshtml" />
     <Content Include="Views\AdminKTs\Details.cshtml" />
     <Content Include="Views\AdminKTs\Edit.cshtml" />
     <Content Include="Views\AdminKTs\Index.cshtml" />
-    <Content Include="Views\Home\GiaiPhap.cshtml" />
-    <Content Include="Views\Home\CongNghe.cshtml" />
-    <Content Include="Views\Home\SanPham.cshtml" />
-    <Content Include="Views\Home\TinhNang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

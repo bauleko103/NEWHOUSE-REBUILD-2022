@@ -4,151 +4,123 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+@using (Html.BeginForm("Edit", "AdminKTs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.IDKTS)
+        @Html.ValidationSummary(true)
+    <div class="col-xl-12 col-md-12 mb-12">
+        <div class="card  shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-12 p-4">
 
 
-<script src="~/ContentAdmin/ckeditor/ckeditor.js"></script>
-<div id="content-wrapper" class="d-flex flex-column">
+                        <style>
+                            .HinhAnhDuAn {
+                                height: 10vh;
+                                width: auto;
+                            }
 
-    <!-- Main Content -->
-    <div id="content">
+                            .HinhAnhFeature {
+                                height: 20vh;
+                                width: auto;
+                            }
+                        </style>
 
-        <!-- Topbar -->
-        <!-- End of Topbar -->
-        <!-- Begin Page Content -->
-        <div class="container-fluid p-md-4">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Tựa Đề
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
 
-            <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Kiến trúc sư</h1>
-            </div>
+                            @Html.EditorFor(model => model.TuaDe, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TuaDe, "", new { @class = "text-danger" })
+                        </div>
+                        <Br />
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Tựa Đề Phụ
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
 
-            <div class="">
-                @using (Html.BeginForm("Edit", "AdminKTs", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                {
-                    @Html.AntiForgeryToken()
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    @Html.HiddenFor(model => model.IDKTS)
-                    @Html.ValidationSummary(true)
+                            @Html.EditorFor(model => model.TuaDePhu, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TuaDePhu, "", new { @class = "text-danger" })
+                        </div>
+                        <Br />
 
-                    <div class="col-xl-12 col-md-12 mb-12">
-                        <div class="card  shadow h-100 py-2">
-                            <div class="card-body">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-12 p-4">
+                        <br />
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Hình ảnh giới thiệu(bắt buộc thêm hình ảnh dưới 1mb)
+                        </div>
+                        <div class="HinhAnhFeature">
+                            <img class="HinhAnhDuAn" src="~/Content/img/kts/@Html.DisplayFor(model => model.Hinh)" style="height: 20vh; width: auto;" />
+                            <input type="file" id="uploadhinh" name="uploadhinh" accept="image/*" />
 
+                        </div>
+                        <br />
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Loại kiến trúc sư
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
 
-                                        <style>
-                                            .HinhAnhDuAn {
-                                                height: 10vh;
-                                                width: auto;
-                                            }
+                            @Html.EditorFor(model => model.LoaiKTS, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.LoaiKTS, "", new { @class = "text-danger" })
+                        </div>
+                        <Br />
+                        }
 
-                                            .HinhAnhFeature {
-                                                height: 20vh;
-                                                width: auto;
-                                            }
-                                        </style>
+                        <div>
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Nội dung chính
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
 
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            Tựa Đề
-                                        </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            @Html.TextAreaFor(model => model.NoiDung, new { @id = "FullDescription", @class = "form-control", @rows = "100" })
+                            <script>CKEDITOR.replace("FullDescription");</script>
+                        </div>
+                        <Br />
 
-                                            @Html.EditorFor(model => model.TuaDe, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.TuaDe, "", new { @class = "text-danger" })
-                                        </div>
-                                        <Br />
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            Tựa Đề Phụ
-                                        </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Ngày làm
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
 
-                                            @Html.EditorFor(model => model.TuaDePhu, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.TuaDePhu, "", new { @class = "text-danger" })
-                                        </div>
-                                        <Br />
-
-                                        <br />
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            Hình ảnh giới thiệu(bắt buộc thêm hình ảnh dưới 1mb)
-                                        </div>
-                                        <div class="HinhAnhFeature">
-                                            <img class="HinhAnhDuAn" src="~/Content/img/kts/@Html.DisplayFor(model => model.Hinh)" style="height: 20vh; width: auto;" />
-                                            <input type="file" id="uploadhinh" name="uploadhinh" accept="image/*" />
-
-                                        </div>
-                                        <br />
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            Loại kiến trúc sư
-                                        </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
-
-                                            @Html.EditorFor(model => model.LoaiKTS, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.LoaiKTS, "", new { @class = "text-danger" })
-                                        </div>
-                                        <Br />
-
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            Nội dung chính
-                                        </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
-
-                                            @Html.TextAreaFor(model => model.NoiDung, new { @id = "FullDescription", @class = "form-control", @rows = "100" })
-                                            <script>
-                                                CKEDITOR.replace("FullDescription");
-                                            </script>
-                                        </div>
-                                        <Br />
-
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            Ngày làm
-                                        </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
-
-                                            @Html.EditorFor(model => model.NgayThang, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                                            @Html.ValidationMessageFor(model => model.NgayThang, "", new { @class = "text-danger" })
-                                        </div>
-
-                                        <div class="col mr-12 p-4" style="display:flex; justify-content: flex-end;">
-                                            <button type="submit" class="btn button-crud" value="Save">
-                                                Tạo
-                                            </button>
-                                            <a class="btn btn-back" href="@Url.Action("Index")">
-                                                Trở về
-                                            </a>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                </div>
-                            </div>
+                            @Html.EditorFor(model => model.NgayThang, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                            @Html.ValidationMessageFor(model => model.NgayThang, "", new { @class = "text-danger" })
                         </div>
 
-
-                        <!-- Tổng dự án Card Example -->
-
-
-
+                        <div class="col mr-12 p-4" style="display:flex; justify-content: flex-end;">
+                            <button type="submit" class="btn button-crud" value="Save">
+                                Tạo
+                            </button>
+                            <a class="btn btn-back" href="@Url.Action("Index")">
+                                Trở về
+                            </a>
+                        </div>
                     </div>
 
 
-                }
-            </div>
-            <!-- /.container-fluid -->
 
+
+
+                </div>
+            </div>
         </div>
-        <!-- End of Main Content -->
-        <!-- Footer -->
-        <!-- End of Footer -->
+
+
+        <!-- Tổng dự án Card Example -->
+
+
 
     </div>
+ }
 
-</div>
-
-
+<!-- /.container-fluid -->
+<!-- End of Main Content -->
+<!-- Footer -->
+<!-- End of Footer -->
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

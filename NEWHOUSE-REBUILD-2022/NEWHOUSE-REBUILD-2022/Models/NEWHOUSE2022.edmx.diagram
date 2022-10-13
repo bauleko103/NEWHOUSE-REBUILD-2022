@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="NEWHOUSE2022Model.KT" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.KTS_DUAN" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.LienHe" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NEWHOUSE2022Model.LoiGioiThieu" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NEWHOUSE2022Model.LoiGioiThieu" Width="1.875" PointX="0.5" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.SanPham" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.Slide" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NEWHOUSE2022Model.sysdiagram" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
