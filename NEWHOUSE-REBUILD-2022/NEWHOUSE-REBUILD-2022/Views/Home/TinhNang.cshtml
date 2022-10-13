@@ -9,20 +9,25 @@
         <div class="title left">
             <h2>Tính Năng</h2>
             <hr>
-            @Html.Raw(ViewBag.LoiGioiThieu.GioiThieuTinhNang)
+            <p>@ViewBag.LoiGioiThieu</p>
         </div>
         <div class="section-content">
             <div class="row">
+                <style>
+                    img.TinhNang {
+                        width:30px;
+                        height:30px;
+                    }
+                </style>
                 @foreach (var item in Model)
                 {
                     <div class="col-md-6 col-sm-6">
                         <div class="icon-box-basic">
-                            <i class="ti-palette"></i>
+                            <i><img class="TinhNang" src="~/Content/img/tinhnang/@item.Hinh" /></i>
                             <h4>@item.TuaDe</h4>
                             @Html.Raw(item.NoiDung)
                         </div>
                     </div>
-
                 }
             </div>
             <!-- end of row-->

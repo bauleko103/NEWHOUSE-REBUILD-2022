@@ -53,6 +53,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
             unv.TuaDe12 = congNghe.TuaDe12;
             unv.NoiDung11 = congNghe.NoiDung11;
             unv.NoiDung12 = congNghe.NoiDung12;
+            unv.TuaDe2 = congNghe.TuaDe2;
             unv.NoiDung2 = congNghe.NoiDung2;
             if (uploadhinh1 != null && uploadhinh1.ContentLength > 0)
             {

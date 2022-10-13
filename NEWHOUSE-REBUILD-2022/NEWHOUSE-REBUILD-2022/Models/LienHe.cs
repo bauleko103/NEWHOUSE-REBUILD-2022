@@ -16,9 +16,5 @@ namespace NEWHOUSE_REBUILD_2022.Models
     {
         public int ID { get; set; }
         public string Map { get; set; }
-        public string DiaChi { get; set; }
-        public string SoDienThoai { get; set; }
-        public string Mail { get; set; }
-        public string ThongTin { get; set; }
     }
 }

@@ -9,7 +9,7 @@
         <div class="title left">
             <h2>Sản Phẩm</h2>
             <hr>
-            @Html.Raw(ViewBag.LoiGioiThieu.GioiThieuSanPham)
+            <p>@ViewBag.LoiGioiThieu</p>
         </div>
         <div class="row">
             @foreach (var item in Model)
@@ -18,7 +18,7 @@
                     <div class="shop-product">
                         <div class="product-thumb">
                             <a href="detail-product.html">
-                                <img src="~/Content/images/4type/@item.HinhGioiThieu" alt="">
+                                <img src="~/Content/img/sanpham/@item.HinhGioiThieu" alt="">
                             </a>
                             <div class="product-overlay">
                                 <a href="@Url.Action("SanPham_Details",new { id=item.ID })" class="btn btn-color-out btn-sm">Xem tiếp</a>

@@ -28,6 +28,7 @@ namespace NEWHOUSE_REBUILD_2022.Models
         public string Hinh { get; set; }
         public string GioiThieu { get; set; }
         public string LoaiDuAn { get; set; }
+        public string KhachHang { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KTS_DUAN> KTS_DUAN { get; set; }

@@ -21,7 +21,7 @@
                 <h1 class="h3 mb-0 text-gray-800">Tính năng</h1>
             </div>
 
-            <div class="row">
+            <div>
                 @using (Html.BeginForm("Create", "AdminTinhNangs", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
@@ -73,7 +73,7 @@
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
 
-                                            @Html.TextAreaFor(model => model.NoiDung, new { @id = "FullDescription", @class = "form-control", @rows = "100" })
+                                            @Html.TextAreaFor(model => model.NoiDung, new { @id = "FullDescription", @class = "form-control", @rows = "5" })
                                             <script>
                                                 CKEDITOR.replace("FullDescription");
                                             </script>

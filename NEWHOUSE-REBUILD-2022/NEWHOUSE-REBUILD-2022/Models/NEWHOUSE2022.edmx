@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="NEWHOUSE2022Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="NEWHOUSE2022Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ADMIN">
           <Key>
             <PropertyRef Name="ID" />
@@ -51,6 +51,7 @@
           <Property Name="Hinh" Type="nvarchar(max)" />
           <Property Name="GioiThieu" Type="ntext" />
           <Property Name="LoaiDuAn" Type="nvarchar" MaxLength="300" />
+          <Property Name="KhachHang" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="GiaiPhap">
           <Key>
@@ -66,14 +67,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Icon1" Type="nvarchar(max)" />
-          <Property Name="Link1" Type="nvarchar(max)" />
-          <Property Name="Icon2" Type="nvarchar(max)" />
-          <Property Name="Link2" Type="nvarchar(max)" />
-          <Property Name="Icon3" Type="nvarchar(max)" />
-          <Property Name="Link3" Type="nvarchar(max)" />
-          <Property Name="Icon4" Type="nvarchar(max)" />
-          <Property Name="Link4" Type="nvarchar(max)" />
+          <Property Name="Icon" Type="nvarchar(max)" />
+          <Property Name="Link" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="KTS">
           <Key>
@@ -84,10 +79,8 @@
           <Property Name="TuaDePhu" Type="nvarchar" MaxLength="100" />
           <Property Name="NoiDung" Type="ntext" />
           <Property Name="Hinh" Type="nvarchar(max)" />
-          <Property Name="LoaiKTS" Type="nvarchar" MaxLength="100" />
-          <Property Name="NgayThang" Type="nvarchar" MaxLength="100" />
-          <Property Name="CongViec" Type="nvarchar" MaxLength="100" />
-          <Property Name="GioiThieu" Type="nvarchar(max)" />
+          <Property Name="GioiThieuTrai" Type="nvarchar(max)" />
+          <Property Name="GioiThieuPhai" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="KTS_DUAN">
           <Key>
@@ -103,10 +96,6 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Map" Type="nvarchar(max)" />
-          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-          <Property Name="SoDienThoai" Type="varchar" MaxLength="50" />
-          <Property Name="Mail" Type="nchar" MaxLength="10" />
-          <Property Name="ThongTin" Type="ntext" />
         </EntityType>
         <EntityType Name="LoiGioiThieu">
           <Key>
@@ -148,6 +137,15 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'NEWHOUSE2022.dbo.ThongTinKhach' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ThongTinKhach">
+          <Property Name="ID" Type="int" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+          <Property Name="SoDienThoai" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="ThongTin" Type="ntext" />
+        </EntityType>-->
         <EntityType Name="TinhNang">
           <Key>
             <PropertyRef Name="ID" />
@@ -215,7 +213,8 @@
             <End Role="KTS_DUAN" EntitySet="KTS_DUAN" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NEWHOUSE2022Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -253,6 +252,21 @@
           <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Hinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="DUAN">
+          <Key>
+            <PropertyRef Name="IDDuan" />
+          </Key>
+          <Property Name="IDDuan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TuaDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TuaDePhu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NgayThang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Hinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LoaiDuAn" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="KhachHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KTS_DUAN" Relationship="Self.FK_KTS_DUAN_DUAN" FromRole="DUAN" ToRole="KTS_DUAN" />
+        </EntityType>
         <EntityType Name="GiaiPhap">
           <Key>
             <PropertyRef Name="ID" />
@@ -267,14 +281,21 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Icon1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Link1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Icon2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Link2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Icon3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Link3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Icon4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Link4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT">
+          <Key>
+            <PropertyRef Name="IDKTS" />
+          </Key>
+          <Property Name="IDKTS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TuaDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TuaDePhu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Hinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GioiThieuTrai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GioiThieuPhai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KTS_DUAN" Relationship="Self.FK_KTS_DUAN_KTS" FromRole="KTS" ToRole="KTS_DUAN" />
         </EntityType>
         <EntityType Name="KTS_DUAN">
           <Key>
@@ -283,8 +304,8 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDDuan" Type="Int32" />
           <Property Name="IDKTS" Type="Int32" />
-          <NavigationProperty Name="DUAN" Relationship="NEWHOUSE2022Model.FK_KTS_DUAN_DUAN" FromRole="KTS_DUAN" ToRole="DUAN" />
-          <NavigationProperty Name="KT" Relationship="NEWHOUSE2022Model.FK_KTS_DUAN_KTS" FromRole="KTS_DUAN" ToRole="KT" />
+          <NavigationProperty Name="DUAN" Relationship="Self.FK_KTS_DUAN_DUAN" FromRole="KTS_DUAN" ToRole="DUAN" />
+          <NavigationProperty Name="KT" Relationship="Self.FK_KTS_DUAN_KTS" FromRole="KTS_DUAN" ToRole="KTS" />
         </EntityType>
         <EntityType Name="LienHe">
           <Key>
@@ -292,10 +313,6 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Map" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SoDienThoai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Mail" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="ThongTin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="LoiGioiThieu">
           <Key>
@@ -314,8 +331,8 @@
           <Property Name="TuaDe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TuaDePhu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="HinhGioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ViTri" Type="Int32" />
           <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ViTri" Type="Int32" />
         </EntityType>
         <EntityType Name="Slide">
           <Key>
@@ -355,63 +372,9 @@
           <Property Name="Hinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="NEWHOUSE2022Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ADMINs" EntityType="Self.ADMIN" />
-          <EntitySet Name="CongNghes" EntityType="Self.CongNghe" />
-          <EntitySet Name="DoiTacs" EntityType="Self.DoiTac" />
-          <EntitySet Name="GiaiPhaps" EntityType="Self.GiaiPhap" />
-          <EntitySet Name="IconXaHois" EntityType="Self.IconXaHoi" />
-          <EntitySet Name="KTS_DUAN" EntityType="Self.KTS_DUAN" />
-          <EntitySet Name="LienHes" EntityType="Self.LienHe" />
-          <EntitySet Name="LoiGioiThieux" EntityType="Self.LoiGioiThieu" />
-          <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
-          <EntitySet Name="Slides" EntityType="Self.Slide" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="TinhNangs" EntityType="Self.TinhNang" />
-          <EntitySet Name="TinTucs" EntityType="Self.TinTuc" />
-          <EntitySet Name="DUANs" EntityType="NEWHOUSE2022Model.DUAN" />
-          <EntitySet Name="KTS" EntityType="NEWHOUSE2022Model.KT" />
-          <AssociationSet Name="FK_KTS_DUAN_DUAN" Association="NEWHOUSE2022Model.FK_KTS_DUAN_DUAN">
-            <End Role="DUAN" EntitySet="DUANs" />
-            <End Role="KTS_DUAN" EntitySet="KTS_DUAN" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KTS_DUAN_KTS" Association="NEWHOUSE2022Model.FK_KTS_DUAN_KTS">
-            <End Role="KT" EntitySet="KTS" />
-            <End Role="KTS_DUAN" EntitySet="KTS_DUAN" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="DUAN">
-          <Key>
-            <PropertyRef Name="IDDuan" />
-          </Key>
-          <Property Name="IDDuan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TuaDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="TuaDePhu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NgayThang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Hinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="GioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="LoaiDuAn" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="KTS_DUAN" Relationship="NEWHOUSE2022Model.FK_KTS_DUAN_DUAN" FromRole="DUAN" ToRole="KTS_DUAN" />
-        </EntityType>
-        <EntityType Name="KT">
-          <Key>
-            <PropertyRef Name="IDKTS" />
-          </Key>
-          <Property Name="IDKTS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TuaDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="TuaDePhu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Hinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="LoaiKTS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NgayThang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CongViec" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="GioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="KTS_DUAN" Relationship="NEWHOUSE2022Model.FK_KTS_DUAN_KTS" FromRole="KT" ToRole="KTS_DUAN" />
-        </EntityType>
         <Association Name="FK_KTS_DUAN_DUAN">
-          <End Type="NEWHOUSE2022Model.DUAN" Role="DUAN" Multiplicity="0..1" />
-          <End Type="NEWHOUSE2022Model.KTS_DUAN" Role="KTS_DUAN" Multiplicity="*" />
+          <End Role="DUAN" Type="Self.DUAN" Multiplicity="0..1" />
+          <End Role="KTS_DUAN" Type="Self.KTS_DUAN" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DUAN">
               <PropertyRef Name="IDDuan" />
@@ -422,10 +385,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_KTS_DUAN_KTS">
-          <End Type="NEWHOUSE2022Model.KT" Role="KT" Multiplicity="0..1" />
-          <End Type="NEWHOUSE2022Model.KTS_DUAN" Role="KTS_DUAN" Multiplicity="*" />
+          <End Role="KTS" Type="Self.KT" Multiplicity="0..1" />
+          <End Role="KTS_DUAN" Type="Self.KTS_DUAN" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="KT">
+            <Principal Role="KTS">
               <PropertyRef Name="IDKTS" />
             </Principal>
             <Dependent Role="KTS_DUAN">
@@ -433,6 +396,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="NEWHOUSE2022Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADMINs" EntityType="Self.ADMIN" />
+          <EntitySet Name="CongNghes" EntityType="Self.CongNghe" />
+          <EntitySet Name="DoiTacs" EntityType="Self.DoiTac" />
+          <EntitySet Name="DUANs" EntityType="Self.DUAN" />
+          <EntitySet Name="GiaiPhaps" EntityType="Self.GiaiPhap" />
+          <EntitySet Name="IconXaHois" EntityType="Self.IconXaHoi" />
+          <EntitySet Name="KTS" EntityType="Self.KT" />
+          <EntitySet Name="KTS_DUAN" EntityType="Self.KTS_DUAN" />
+          <EntitySet Name="LienHes" EntityType="Self.LienHe" />
+          <EntitySet Name="LoiGioiThieux" EntityType="Self.LoiGioiThieu" />
+          <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
+          <EntitySet Name="Slides" EntityType="Self.Slide" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TinhNangs" EntityType="Self.TinhNang" />
+          <EntitySet Name="TinTucs" EntityType="Self.TinTuc" />
+          <AssociationSet Name="FK_KTS_DUAN_DUAN" Association="Self.FK_KTS_DUAN_DUAN">
+            <End Role="DUAN" EntitySet="DUANs" />
+            <End Role="KTS_DUAN" EntitySet="KTS_DUAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KTS_DUAN_KTS" Association="Self.FK_KTS_DUAN_KTS">
+            <End Role="KTS" EntitySet="KTS" />
+            <End Role="KTS_DUAN" EntitySet="KTS_DUAN" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -442,10 +430,10 @@
           <EntitySetMapping Name="ADMINs">
             <EntityTypeMapping TypeName="NEWHOUSE2022Model.ADMIN">
               <MappingFragment StoreEntitySet="ADMIN">
-                <ScalarProperty Name="LoginErrorMessage" ColumnName="LoginErrorMessage" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
                 <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="LoginErrorMessage" ColumnName="LoginErrorMessage" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -476,6 +464,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="DUANs">
+            <EntityTypeMapping TypeName="NEWHOUSE2022Model.DUAN">
+              <MappingFragment StoreEntitySet="DUAN">
+                <ScalarProperty Name="IDDuan" ColumnName="IDDuan" />
+                <ScalarProperty Name="TuaDe" ColumnName="TuaDe" />
+                <ScalarProperty Name="TuaDePhu" ColumnName="TuaDePhu" />
+                <ScalarProperty Name="NgayThang" ColumnName="NgayThang" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="Hinh" ColumnName="Hinh" />
+                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+                <ScalarProperty Name="LoaiDuAn" ColumnName="LoaiDuAn" />
+                <ScalarProperty Name="KhachHang" ColumnName="KhachHang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="GiaiPhaps">
             <EntityTypeMapping TypeName="NEWHOUSE2022Model.GiaiPhap">
               <MappingFragment StoreEntitySet="GiaiPhap">
@@ -490,14 +493,21 @@
             <EntityTypeMapping TypeName="NEWHOUSE2022Model.IconXaHoi">
               <MappingFragment StoreEntitySet="IconXaHoi">
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Icon1" ColumnName="Icon1" />
-                <ScalarProperty Name="Link1" ColumnName="Link1" />
-                <ScalarProperty Name="Icon2" ColumnName="Icon2" />
-                <ScalarProperty Name="Link2" ColumnName="Link2" />
-                <ScalarProperty Name="Icon3" ColumnName="Icon3" />
-                <ScalarProperty Name="Link3" ColumnName="Link3" />
-                <ScalarProperty Name="Icon4" ColumnName="Icon4" />
-                <ScalarProperty Name="Link4" ColumnName="Link4" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KTS">
+            <EntityTypeMapping TypeName="NEWHOUSE2022Model.KT">
+              <MappingFragment StoreEntitySet="KTS">
+                <ScalarProperty Name="IDKTS" ColumnName="IDKTS" />
+                <ScalarProperty Name="TuaDe" ColumnName="TuaDe" />
+                <ScalarProperty Name="TuaDePhu" ColumnName="TuaDePhu" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="Hinh" ColumnName="Hinh" />
+                <ScalarProperty Name="GioiThieuTrai" ColumnName="GioiThieuTrai" />
+                <ScalarProperty Name="GioiThieuPhai" ColumnName="GioiThieuPhai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -515,10 +525,6 @@
               <MappingFragment StoreEntitySet="LienHe">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Map" ColumnName="Map" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
-                <ScalarProperty Name="Mail" ColumnName="Mail" />
-                <ScalarProperty Name="ThongTin" ColumnName="ThongTin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -535,11 +541,11 @@
           <EntitySetMapping Name="SanPhams">
             <EntityTypeMapping TypeName="NEWHOUSE2022Model.SanPham">
               <MappingFragment StoreEntitySet="SanPham">
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TuaDe" ColumnName="TuaDe" />
                 <ScalarProperty Name="TuaDePhu" ColumnName="TuaDePhu" />
                 <ScalarProperty Name="HinhGioiThieu" ColumnName="HinhGioiThieu" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="ViTri" ColumnName="ViTri" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -583,35 +589,6 @@
                 <ScalarProperty Name="TuaDe" ColumnName="TuaDe" />
                 <ScalarProperty Name="Hinh" ColumnName="Hinh" />
                 <ScalarProperty Name="Link" ColumnName="Link" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DUANs">
-            <EntityTypeMapping TypeName="NEWHOUSE2022Model.DUAN">
-              <MappingFragment StoreEntitySet="DUAN">
-                <ScalarProperty Name="LoaiDuAn" ColumnName="LoaiDuAn" />
-                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
-                <ScalarProperty Name="Hinh" ColumnName="Hinh" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="NgayThang" ColumnName="NgayThang" />
-                <ScalarProperty Name="TuaDePhu" ColumnName="TuaDePhu" />
-                <ScalarProperty Name="TuaDe" ColumnName="TuaDe" />
-                <ScalarProperty Name="IDDuan" ColumnName="IDDuan" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="KTS">
-            <EntityTypeMapping TypeName="NEWHOUSE2022Model.KT">
-              <MappingFragment StoreEntitySet="KTS">
-                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
-                <ScalarProperty Name="CongViec" ColumnName="CongViec" />
-                <ScalarProperty Name="NgayThang" ColumnName="NgayThang" />
-                <ScalarProperty Name="LoaiKTS" ColumnName="LoaiKTS" />
-                <ScalarProperty Name="Hinh" ColumnName="Hinh" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="TuaDePhu" ColumnName="TuaDePhu" />
-                <ScalarProperty Name="TuaDe" ColumnName="TuaDe" />
-                <ScalarProperty Name="IDKTS" ColumnName="IDKTS" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

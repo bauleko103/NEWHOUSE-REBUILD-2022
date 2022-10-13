@@ -95,11 +95,9 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
              KT unv = db.KTS.FirstOrDefault(x => x.IDKTS == kT.IDKTS);
             unv.TuaDe = kT.TuaDe;
             unv.TuaDePhu = kT.TuaDePhu;
-            unv.NgayThang = kT.NgayThang;
             unv.NoiDung = kT.NoiDung;
-            unv.GioiThieu = kT.GioiThieu;
-            unv.LoaiKTS = kT.LoaiKTS;
-            unv.CongViec = kT.CongViec;
+            unv.GioiThieuTrai = kT.GioiThieuTrai;
+            unv.GioiThieuPhai = kT.GioiThieuPhai;
            
             if (uploadhinh != null && uploadhinh.ContentLength > 0)
             {

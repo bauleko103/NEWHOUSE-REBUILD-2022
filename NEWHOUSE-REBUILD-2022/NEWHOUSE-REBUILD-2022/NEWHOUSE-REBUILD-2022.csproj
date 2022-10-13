@@ -47,7 +47,7 @@
   <ItemGroup>
     <Reference Include="CKFinder, Version=2.4.1.2663, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\EZHUB\EZHUBvn\EZHUBvn\ContentWebmaster\CKFinder.dll</HintPath>
+      <HintPath>C:\Users\LENOVO\Downloads\CKFinder.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -2955,6 +2955,14 @@
     <Content Include="Content\images\team\6.jpg" />
     <Content Include="Content\images\team\7.jpg" />
     <Content Include="Content\images\team\8.jpg" />
+    <Content Include="Content\img\icon\8666740_slash_icon.png" />
+    <Content Include="Content\img\slide1.jpg" />
+    <Content Include="Content\img\slide2.png" />
+    <Content Include="Content\img\slide3.png" />
+    <Content Include="Content\img\slide4.jpg" />
+    <Content Include="Content\img\slide5.png" />
+    <Content Include="Content\img\slide7.png" />
+    <Content Include="Content\img\slide8.jpg" />
     <Content Include="Content\js\bundle.js" />
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\main.js" />
@@ -3049,13 +3057,6 @@
     <Content Include="Content\fonts\themify9f24.eot" />
     <Content Include="Content\fonts\themify9f24.ttf" />
     <Content Include="Content\fonts\themify9f24.woff" />
-    <EntityDeploy Include="Models\NEWHOUSE2022.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NEWHOUSE2022.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\NEWHOUSE2022.edmx.diagram">
-      <DependentUpon>NEWHOUSE2022.edmx</DependentUpon>
-    </Content>
     <Content Include="ContentAdmin\ckeditor\plugins\scayt\CHANGELOG.md" />
     <Content Include="ContentAdmin\ckeditor\plugins\scayt\LICENSE.md" />
     <Content Include="ContentAdmin\ckeditor\plugins\scayt\README.md" />
@@ -3238,6 +3239,13 @@
     <Content Include="ContentAdmin\vendor\jquery\jquery.min.map" />
     <Content Include="ContentAdmin\vendor\jquery\jquery.slim.min.map" />
     <Content Include="ContentAdmin\package-lock.json" />
+    <EntityDeploy Include="Models\NEWHOUSE2022.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NEWHOUSE2022.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NEWHOUSE2022.edmx.diagram">
+      <DependentUpon>NEWHOUSE2022.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

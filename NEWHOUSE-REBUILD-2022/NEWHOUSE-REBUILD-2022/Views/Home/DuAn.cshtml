@@ -30,10 +30,10 @@
         <div id="works" class="four-col wide mt-50">
             @foreach (var item in Model)
             {
-                <div class="work-item branding video">
+                <div class="work-item">
                     <div class="work-detail">
                         <a href="@Url.Action("DuAn_Details",new { id=item.IDDuan })">
-                            <img src="~/Content/images/portfolio/@item.Hinh" alt="">
+                            <img src="~/Content/img/duan/@item.Hinh" alt="">
                             <div class="work-info">
                                 <div class="centrize">
                                     <div class="v-center">

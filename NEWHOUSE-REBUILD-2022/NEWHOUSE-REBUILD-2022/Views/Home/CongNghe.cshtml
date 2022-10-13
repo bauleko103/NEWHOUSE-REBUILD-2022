@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-4 img-side img-right">
                     <div class="img-holder">
-                        <img src="~/Content/images/about/@item.Hinh1" alt="" class="bg-img">
+                        <img src="~/Content/img/congnghe/@item.Hinh1" alt="" class="bg-img">
                     </div>
                 </div>
                 <!-- end of side background image-->
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-4 img-side img-left">
                     <div class="img-holder">
-                        <img src="@item.Hinh2" alt="" class="bg-img">
+                        <img src="~/Content/img/congnghe/@item.Hinh2" alt="" class="bg-img">
                     </div>
                 </div>
                 <!-- end of side background image-->
@@ -65,7 +65,7 @@
                         <div class="col-md-12">
                             <div>
                                 <h4>@item.TuaDe2</h4>
-                                <p>@item.NoiDung2</p>
+                                @Html.Raw(item.NoiDung2)
                             </div>
                         </div>
                     </div>

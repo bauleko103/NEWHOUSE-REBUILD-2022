@@ -33,7 +33,9 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
 
         public ActionResult SanPham()
         {
-            ViewBag.LoiGioiThieu = db.LoiGioiThieux;
+            var LoiGioiThieu = (from loigioithieu in db.LoiGioiThieux
+                                select loigioithieu.GioiThieuSanPham).FirstOrDefault();
+            ViewBag.LoiGioiThieu = LoiGioiThieu;
             return View(db.SanPhams.ToList());
         }
 
@@ -48,7 +50,9 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
 
         public ActionResult TinhNang()
         {
-            ViewBag.LoiGioiThieu = db.LoiGioiThieux;
+            var LoiGioiThieu = (from loigioithieu in db.LoiGioiThieux
+                                select loigioithieu.GioiThieuTinhNang).FirstOrDefault();
+            ViewBag.LoiGioiThieu = LoiGioiThieu;
             return View(db.TinhNangs.ToList());
         }
 
@@ -67,7 +71,9 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
 
         public ActionResult KienTrucSu()
         {
-            ViewBag.LoiGioiThieu = db.LoiGioiThieux;
+            var LoiGioiThieuKTS = (from loigioithieu in db.LoiGioiThieux
+                               select loigioithieu.GioiThieuKTS).FirstOrDefault();
+            ViewBag.LoiGioiThieuKTS = LoiGioiThieuKTS;
             return View(db.KTS.ToList());
         }
         public ActionResult KienTrucSu_Details(int? id)
