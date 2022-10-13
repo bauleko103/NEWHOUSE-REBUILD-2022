@@ -60,7 +60,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( DUAN dUAN, HttpPostedFileBase uploadhinh,  KTS_DUAN kTS_DUAN,  string chuoi )
+        public ActionResult Create( DUAN dUAN, HttpPostedFileBase uploadhinh, [Bind(Include = "ID,IDDuan,IDKTS")] KTS_DUAN ktDA,  string chuoi )
         {
             /* //ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", kTS_DUAN.IDDuan);
              ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", dUAN.IDDuan);
@@ -69,76 +69,105 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
              db.KTS_DUAN.Add(kTS_DUAN);
              db.SaveChanges();*/
          
-            db.DUANs.Add(dUAN); 
-            db.SaveChanges();
-            
-            if (uploadhinh != null && uploadhinh.ContentLength > 0)
+             
+            if (ModelState.IsValid)
             {
-                int id = int.Parse(db.DUANs.ToList().Last().IDDuan.ToString());
-
-                string _FileName = "";
-                int index = uploadhinh.FileName.IndexOf('.');
-                _FileName = "duan" + id.ToString() + "." + uploadhinh.FileName.Substring(index + 1);
-                string _path = Path.Combine(Server.MapPath("~/Content/img/duan/"), _FileName);
-                uploadhinh.SaveAs(_path);
-
-                DUAN unv = db.DUANs.FirstOrDefault(x => x.IDDuan == id);
-                unv.Hinh = _FileName;
+                db.DUANs.Add(dUAN);
                 db.SaveChanges();
+             
+                if (uploadhinh != null && uploadhinh.ContentLength > 0)
+                {
+                    int id = int.Parse(db.DUANs.ToList().Last().IDDuan.ToString());
+
+                    string _FileName = "";
+                    int index = uploadhinh.FileName.IndexOf('.');
+                    _FileName = "duan" + id.ToString() + "." + uploadhinh.FileName.Substring(index + 1);
+                    string _path = Path.Combine(Server.MapPath("~/Content/img/duan/"), _FileName);
+                    uploadhinh.SaveAs(_path);
+
+                    DUAN unv = db.DUANs.FirstOrDefault(x => x.IDDuan == id);
+                    unv.Hinh = _FileName;
+                    db.SaveChanges();
+                }
+
+                /*
+                            kTS_DUAN.IDDuan = dUAN.IDDuan;
+                            kTS_DUAN.IDKTS =chuoi;
+                            db.KTS_DUAN.Add(kTS_DUAN);
+                            ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", dUAN.IDDuan);*/
+                ktDA.IDDuan = dUAN.IDDuan;
+                
+                db.KTS_DUAN.Add(ktDA);
+                db.SaveChanges();
+                ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", ktDA.IDDuan);
+                ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", ktDA.IDKTS);
+
             }
-
-
-            kTS_DUAN.IDDuan = dUAN.IDDuan;
-            kTS_DUAN.IDKTS =chuoi;
-            db.KTS_DUAN.Add(kTS_DUAN);
-            ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", dUAN.IDDuan);
-            db.SaveChanges();
+            
             return RedirectToAction("Index", "AdminDUANs");
 
              
         }
 
         // GET: AdminDUANs/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, KTS_DUAN ktDA)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             DUAN dUAN = db.DUANs.Find(id);
+            int ID = dUAN.IDDuan;
+           
             if (dUAN == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", ktDA.IDKTS);
             return View(dUAN);
+
+            
+           
+            
+        
+             
         }
 
 
         [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit( DUAN dUAN, HttpPostedFileBase uploadhinh)
+        public ActionResult Edit( DUAN dUAN, HttpPostedFileBase uploadhinh, [Bind(Include = "ID,IDDuan,IDKTS")] KTS_DUAN ktDA)
         {
-            
 
-            DUAN unv = db.DUANs.FirstOrDefault(x => x.IDDuan == dUAN.IDDuan);
-            unv.TuaDe = dUAN.TuaDe;
-            unv.TuaDePhu = dUAN.TuaDePhu;
-            unv.NgayThang = dUAN.NgayThang;
-            unv.NoiDung = dUAN.NoiDung;
-            unv.GioiThieu = dUAN.GioiThieu;
-            unv.LoaiDuAn = dUAN.LoaiDuAn;
-            if (uploadhinh != null && uploadhinh.ContentLength > 0)
+            if (ModelState.IsValid)
             {
-                int id = dUAN.IDDuan;
-                string _FileName = "";
-                int index = uploadhinh.FileName.IndexOf('.');
-                _FileName = "duan" + id.ToString() + "." + uploadhinh.FileName.Substring(index + 1);
-                string _path = Path.Combine(Server.MapPath("~/Content/img/duan"), _FileName);
-                uploadhinh.SaveAs(_path);
-                unv.Hinh = _FileName;
+                DUAN unv = db.DUANs.FirstOrDefault(x => x.IDDuan == dUAN.IDDuan);
+                unv.TuaDe = dUAN.TuaDe;
+                unv.TuaDePhu = dUAN.TuaDePhu;
+                unv.NgayThang = dUAN.NgayThang;
+                unv.NoiDung = dUAN.NoiDung;
+                unv.GioiThieu = dUAN.GioiThieu;
+                unv.LoaiDuAn = dUAN.LoaiDuAn;
+                db.SaveChanges();
+                if (uploadhinh != null && uploadhinh.ContentLength > 0)
+                {
+                    int id = dUAN.IDDuan;
+                    string _FileName = "";
+                    int index = uploadhinh.FileName.IndexOf('.');
+                    _FileName = "duan" + id.ToString() + "." + uploadhinh.FileName.Substring(index + 1);
+                    string _path = Path.Combine(Server.MapPath("~/Content/img/duan"), _FileName);
+                    uploadhinh.SaveAs(_path);
+                    unv.Hinh = _FileName;
+
+                }
+                db.Entry(ktDA).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            db.SaveChanges();
+            ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", ktDA.IDDuan);
+            ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", ktDA.IDKTS);
             return RedirectToAction("Index");
+
         }
 
         // GET: AdminDUANs/Delete/5
