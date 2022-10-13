@@ -11,8 +11,7 @@ namespace NEWHOUSE_REBUILD_2022.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class DUAN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,8 +23,6 @@ namespace NEWHOUSE_REBUILD_2022.Models
         public int IDDuan { get; set; }
         public string TuaDe { get; set; }
         public string TuaDePhu { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public string NgayThang { get; set; }
         public string NoiDung { get; set; }
         public string Hinh { get; set; }

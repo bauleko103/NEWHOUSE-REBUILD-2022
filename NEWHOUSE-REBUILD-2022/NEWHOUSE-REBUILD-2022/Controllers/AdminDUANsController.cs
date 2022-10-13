@@ -60,7 +60,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( DUAN dUAN, HttpPostedFileBase uploadhinh, [Bind(Include = "ID,IDDuan,IDKTS")] KTS_DUAN ktDA,  string chuoi )
+        public ActionResult Create( DUAN dUAN, HttpPostedFileBase uploadhinh  )
         {
             /* //ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", kTS_DUAN.IDDuan);
              ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", dUAN.IDDuan);
@@ -95,12 +95,12 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
                             kTS_DUAN.IDKTS =chuoi;
                             db.KTS_DUAN.Add(kTS_DUAN);
                             ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", dUAN.IDDuan);*/
-                ktDA.IDDuan = dUAN.IDDuan;
+               /* ktDA.IDDuan = dUAN.IDDuan;
                 
-                db.KTS_DUAN.Add(ktDA);
+                db.KTS_DUAN.Add(ktDA);*/
                 db.SaveChanges();
-                ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", ktDA.IDDuan);
-                ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", ktDA.IDKTS);
+              /*  ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", ktDA.IDDuan);
+                ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", ktDA.IDKTS);*/
 
             }
             
@@ -117,7 +117,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             DUAN dUAN = db.DUANs.Find(id);
-            int ID = dUAN.IDDuan;
+            
            
             if (dUAN == null)
             {
@@ -148,7 +148,7 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
                 unv.NoiDung = dUAN.NoiDung;
                 unv.GioiThieu = dUAN.GioiThieu;
                 unv.LoaiDuAn = dUAN.LoaiDuAn;
-                db.SaveChanges();
+              
                 if (uploadhinh != null && uploadhinh.ContentLength > 0)
                 {
                     int id = dUAN.IDDuan;
@@ -160,13 +160,14 @@ namespace NEWHOUSE_REBUILD_2022.Controllers
                     unv.Hinh = _FileName;
 
                 }
-                db.Entry(ktDA).State = EntityState.Modified;
+                
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", ktDA.IDDuan);
-            ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", ktDA.IDKTS);
             return RedirectToAction("Index");
+            /*  ViewBag.IDDuan = new SelectList(db.DUANs, "IDDuan", "TuaDe", ktDA.IDDuan);
+              ViewBag.IDKTS = new SelectList(db.KTS, "IDKTS", "TuaDe", ktDA.IDKTS);
+              return RedirectToAction("Index");*/
 
         }
 
